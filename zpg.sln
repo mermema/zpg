@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zpg", "zpg\zpg.vcxproj", "{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}.Debug|x64.ActiveCfg = Debug|x64
+		{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}.Debug|x64.Build.0 = Debug|x64
+		{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}.Debug|x86.ActiveCfg = Debug|Win32
+		{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}.Debug|x86.Build.0 = Debug|Win32
+		{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}.Release|x64.ActiveCfg = Release|x64
+		{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}.Release|x64.Build.0 = Release|x64
+		{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}.Release|x86.ActiveCfg = Release|Win32
+		{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2287683B-7D72-4F43-BE4E-013B818E6D53}
+	EndGlobalSection
+EndGlobal
