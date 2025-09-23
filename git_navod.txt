@@ -1,0 +1,14 @@
+doporučený postup při ukládání práce:
+
+git status – podívat se na změny
+
+git add . – připravit soubory ke commitu
+
+git commit -m "popis změn" – uložit snapshot lokálně
+
+git pull origin main – stáhnout případné změny z GitHubu
+
+git push origin main – poslat svoje změny na GitHub
+
+
+git pull - stahne zmeny z githubu a zmeni data v teto slozce
