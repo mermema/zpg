@@ -1,10 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\matej\\Downloads\\zpg\\",
+  "WorkspaceRootPath": "C:\\Users\\mer0126\\Desktop\\zpg\\zpg\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}|zpg\\zpg.vcxproj|C:\\Users\\matej\\Downloads\\zpg\\zpg\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}|zpg\\zpg.vcxproj|C:\\Users\\mer0126\\Desktop\\zpg\\zpg\\zpg\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}|zpg\\zpg.vcxproj|solutionrelative:zpg\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}|zpg\\zpg.vcxproj|C:\\Users\\mer0126\\Desktop\\zpg\\zpg\\zpg\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}|zpg\\zpg.vcxproj|solutionrelative:zpg\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}|zpg\\zpg.vcxproj|C:\\USERS\\MER0126\\DESKTOP\\ZPG\\ZPG\\LIBRARIES\\GLEW-2.1.0\\INCLUDE\\GL\\GLEW.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}|zpg\\zpg.vcxproj|solutionrelative:LIBRARIES\\GLEW-2.1.0\\INCLUDE\\GL\\GLEW.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +22,49 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "test.cpp",
+              "DocumentMoniker": "C:\\Users\\mer0126\\Desktop\\zpg\\zpg\\zpg\\test.cpp",
+              "RelativeDocumentMoniker": "zpg\\test.cpp",
+              "ToolTip": "C:\\Users\\mer0126\\Desktop\\zpg\\zpg\\zpg\\test.cpp",
+              "RelativeToolTip": "zpg\\test.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-09-24T09:59:31.451Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "glew.h",
+              "DocumentMoniker": "C:\\Users\\mer0126\\Desktop\\zpg\\zpg\\Libraries\\glew-2.1.0\\include\\GL\\glew.h",
+              "RelativeDocumentMoniker": "Libraries\\glew-2.1.0\\include\\GL\\glew.h",
+              "ToolTip": "C:\\Users\\mer0126\\Desktop\\zpg\\zpg\\Libraries\\glew-2.1.0\\include\\GL\\glew.h",
+              "RelativeToolTip": "Libraries\\glew-2.1.0\\include\\GL\\glew.h",
+              "ViewState": "AgIAADUAAAAAAAAAAAApwFMAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-09-24T09:10:55.417Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "main.cpp",
-              "DocumentMoniker": "C:\\Users\\matej\\Downloads\\zpg\\zpg\\main.cpp",
+              "DocumentMoniker": "C:\\Users\\mer0126\\Desktop\\zpg\\zpg\\zpg\\main.cpp",
               "RelativeDocumentMoniker": "zpg\\main.cpp",
-              "ToolTip": "C:\\Users\\matej\\Downloads\\zpg\\zpg\\main.cpp",
+              "ToolTip": "C:\\Users\\mer0126\\Desktop\\zpg\\zpg\\zpg\\main.cpp",
               "RelativeToolTip": "zpg\\main.cpp",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAACsAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAIwJEAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-09-21T22:03:12.01Z",
+              "WhenOpened": "2025-09-24T08:56:52.381Z",
               "EditorCaption": ""
             }
           ]
