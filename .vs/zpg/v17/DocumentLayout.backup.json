@@ -1,18 +1,50 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\mer0126\\Desktop\\zpg\\zpg\\",
+  "WorkspaceRootPath": "C:\\Users\\matej\\Downloads\\zpg\\zpg\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}|zpg\\zpg.vcxproj|C:\\Users\\mer0126\\Desktop\\zpg\\zpg\\zpg\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}|zpg\\zpg.vcxproj|C:\\Users\\matej\\Downloads\\zpg\\zpg\\zpg\\Sheders.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}|zpg\\zpg.vcxproj|solutionrelative:zpg\\Sheders.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}|zpg\\zpg.vcxproj|C:\\Users\\matej\\Downloads\\zpg\\zpg\\zpg\\ShapeBuilder.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}|zpg\\zpg.vcxproj|solutionrelative:zpg\\ShapeBuilder.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}|zpg\\zpg.vcxproj|C:\\Users\\matej\\Downloads\\zpg\\zpg\\zpg\\ShapeBuilder.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}|zpg\\zpg.vcxproj|solutionrelative:zpg\\ShapeBuilder.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}|zpg\\zpg.vcxproj|C:\\Users\\matej\\Downloads\\zpg\\zpg\\zpg\\ShaderProgram.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}|zpg\\zpg.vcxproj|solutionrelative:zpg\\ShaderProgram.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}|zpg\\zpg.vcxproj|C:\\Users\\matej\\Downloads\\zpg\\zpg\\zpg\\ShaderProgram.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}|zpg\\zpg.vcxproj|solutionrelative:zpg\\ShaderProgram.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}|zpg\\zpg.vcxproj|C:\\Users\\matej\\Downloads\\zpg\\zpg\\zpg\\Model.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}|zpg\\zpg.vcxproj|solutionrelative:zpg\\Model.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}|zpg\\zpg.vcxproj|C:\\Users\\matej\\Downloads\\zpg\\zpg\\zpg\\Model.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}|zpg\\zpg.vcxproj|solutionrelative:zpg\\Model.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}|zpg\\zpg.vcxproj|C:\\Users\\matej\\Downloads\\zpg\\zpg\\zpg\\App.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}|zpg\\zpg.vcxproj|solutionrelative:zpg\\App.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}|zpg\\zpg.vcxproj|C:\\Users\\matej\\Downloads\\zpg\\zpg\\zpg\\App.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}|zpg\\zpg.vcxproj|solutionrelative:zpg\\App.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}|zpg\\zpg.vcxproj|C:\\Users\\matej\\Downloads\\zpg\\zpg\\zpg\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}|zpg\\zpg.vcxproj|solutionrelative:zpg\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}|zpg\\zpg.vcxproj|C:\\Users\\mer0126\\Desktop\\zpg\\zpg\\zpg\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}|zpg\\zpg.vcxproj|solutionrelative:zpg\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}|zpg\\zpg.vcxproj|C:\\USERS\\MER0126\\DESKTOP\\ZPG\\ZPG\\LIBRARIES\\GLEW-2.1.0\\INCLUDE\\GL\\GLEW.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5725E7DD-F974-45AF-B055-7B0BE24EDE3B}|zpg\\zpg.vcxproj|solutionrelative:LIBRARIES\\GLEW-2.1.0\\INCLUDE\\GL\\GLEW.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\matej\\Downloads\\zpg\\zpg\\Libraries\\glew-2.1.0\\include\\GL\\glew.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Libraries\\glew-2.1.0\\include\\GL\\glew.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,47 +54,146 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "test.cpp",
-              "DocumentMoniker": "C:\\Users\\mer0126\\Desktop\\zpg\\zpg\\zpg\\test.cpp",
-              "RelativeDocumentMoniker": "zpg\\test.cpp",
-              "ToolTip": "C:\\Users\\mer0126\\Desktop\\zpg\\zpg\\zpg\\test.cpp",
-              "RelativeToolTip": "zpg\\test.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-09-24T09:59:31.451Z",
+              "DocumentIndex": 0,
+              "Title": "Sheders.h",
+              "DocumentMoniker": "C:\\Users\\matej\\Downloads\\zpg\\zpg\\zpg\\Sheders.h",
+              "RelativeDocumentMoniker": "zpg\\Sheders.h",
+              "ToolTip": "C:\\Users\\matej\\Downloads\\zpg\\zpg\\zpg\\Sheders.h",
+              "RelativeToolTip": "zpg\\Sheders.h",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAowBsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-09-30T18:52:27.317Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ShapeBuilder.cpp",
+              "DocumentMoniker": "C:\\Users\\matej\\Downloads\\zpg\\zpg\\zpg\\ShapeBuilder.cpp",
+              "RelativeDocumentMoniker": "zpg\\ShapeBuilder.cpp",
+              "ToolTip": "C:\\Users\\matej\\Downloads\\zpg\\zpg\\zpg\\ShapeBuilder.cpp*",
+              "RelativeToolTip": "zpg\\ShapeBuilder.cpp*",
+              "ViewState": "AgIAABsAAAAAAAAAAAAowDQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-09-30T18:51:37.182Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "glew.h",
-              "DocumentMoniker": "C:\\Users\\mer0126\\Desktop\\zpg\\zpg\\Libraries\\glew-2.1.0\\include\\GL\\glew.h",
-              "RelativeDocumentMoniker": "Libraries\\glew-2.1.0\\include\\GL\\glew.h",
-              "ToolTip": "C:\\Users\\mer0126\\Desktop\\zpg\\zpg\\Libraries\\glew-2.1.0\\include\\GL\\glew.h",
-              "RelativeToolTip": "Libraries\\glew-2.1.0\\include\\GL\\glew.h",
-              "ViewState": "AgIAADUAAAAAAAAAAAApwFMAAAApAAAAAAAAAA==",
+              "Title": "ShapeBuilder.h",
+              "DocumentMoniker": "C:\\Users\\matej\\Downloads\\zpg\\zpg\\zpg\\ShapeBuilder.h",
+              "RelativeDocumentMoniker": "zpg\\ShapeBuilder.h",
+              "ToolTip": "C:\\Users\\matej\\Downloads\\zpg\\zpg\\zpg\\ShapeBuilder.h*",
+              "RelativeToolTip": "zpg\\ShapeBuilder.h*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-09-24T09:10:55.417Z",
+              "WhenOpened": "2025-09-30T18:51:05.774Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "ShaderProgram.cpp",
+              "DocumentMoniker": "C:\\Users\\matej\\Downloads\\zpg\\zpg\\zpg\\ShaderProgram.cpp",
+              "RelativeDocumentMoniker": "zpg\\ShaderProgram.cpp",
+              "ToolTip": "C:\\Users\\matej\\Downloads\\zpg\\zpg\\zpg\\ShaderProgram.cpp*",
+              "RelativeToolTip": "zpg\\ShaderProgram.cpp*",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowDEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-09-30T18:50:39.491Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ShaderProgram.h",
+              "DocumentMoniker": "C:\\Users\\matej\\Downloads\\zpg\\zpg\\zpg\\ShaderProgram.h",
+              "RelativeDocumentMoniker": "zpg\\ShaderProgram.h",
+              "ToolTip": "C:\\Users\\matej\\Downloads\\zpg\\zpg\\zpg\\ShaderProgram.h*",
+              "RelativeToolTip": "zpg\\ShaderProgram.h*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAowBMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-09-30T18:49:54.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Model.cpp",
+              "DocumentMoniker": "C:\\Users\\matej\\Downloads\\zpg\\zpg\\zpg\\Model.cpp",
+              "RelativeDocumentMoniker": "zpg\\Model.cpp",
+              "ToolTip": "C:\\Users\\matej\\Downloads\\zpg\\zpg\\zpg\\Model.cpp*",
+              "RelativeToolTip": "zpg\\Model.cpp*",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAowCEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-09-30T18:49:28.043Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Model.h",
+              "DocumentMoniker": "C:\\Users\\matej\\Downloads\\zpg\\zpg\\zpg\\Model.h",
+              "RelativeDocumentMoniker": "zpg\\Model.h",
+              "ToolTip": "C:\\Users\\matej\\Downloads\\zpg\\zpg\\zpg\\Model.h*",
+              "RelativeToolTip": "zpg\\Model.h*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-09-30T18:49:06.035Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "App.cpp",
+              "DocumentMoniker": "C:\\Users\\matej\\Downloads\\zpg\\zpg\\zpg\\App.cpp",
+              "RelativeDocumentMoniker": "zpg\\App.cpp",
+              "ToolTip": "C:\\Users\\matej\\Downloads\\zpg\\zpg\\zpg\\App.cpp*",
+              "RelativeToolTip": "zpg\\App.cpp*",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAowGYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-09-30T18:48:22.788Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "App.h",
+              "DocumentMoniker": "C:\\Users\\matej\\Downloads\\zpg\\zpg\\zpg\\App.h",
+              "RelativeDocumentMoniker": "zpg\\App.h",
+              "ToolTip": "C:\\Users\\matej\\Downloads\\zpg\\zpg\\zpg\\App.h",
+              "RelativeToolTip": "zpg\\App.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAowBkAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-09-30T18:47:55.721Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "glew.h",
+              "DocumentMoniker": "C:\\Users\\matej\\Downloads\\zpg\\zpg\\Libraries\\glew-2.1.0\\include\\GL\\glew.h",
+              "RelativeDocumentMoniker": "Libraries\\glew-2.1.0\\include\\GL\\glew.h",
+              "ToolTip": "C:\\Users\\matej\\Downloads\\zpg\\zpg\\Libraries\\glew-2.1.0\\include\\GL\\glew.h",
+              "RelativeToolTip": "Libraries\\glew-2.1.0\\include\\GL\\glew.h",
+              "ViewState": "AgIAADUAAAAAAAAAAAApwFMAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-09-24T09:10:55.417Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "main.cpp",
-              "DocumentMoniker": "C:\\Users\\mer0126\\Desktop\\zpg\\zpg\\zpg\\main.cpp",
+              "DocumentMoniker": "C:\\Users\\matej\\Downloads\\zpg\\zpg\\zpg\\main.cpp",
               "RelativeDocumentMoniker": "zpg\\main.cpp",
-              "ToolTip": "C:\\Users\\mer0126\\Desktop\\zpg\\zpg\\zpg\\main.cpp",
-              "RelativeToolTip": "zpg\\main.cpp",
-              "ViewState": "AgIAAGwAAAAAAAAAAAAAAJEAAAAyAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\matej\\Downloads\\zpg\\zpg\\zpg\\main.cpp*",
+              "RelativeToolTip": "zpg\\main.cpp*",
+              "ViewState": "AgIAAMcAAAAAAAAAAAAowOAAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-09-24T08:56:52.381Z",
               "EditorCaption": ""
