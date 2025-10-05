@@ -1,2 +1,12 @@
-C:\Users\mer0126\Desktop\zpg\zpg\zpg\main.cpp;C:\Users\mer0126\Desktop\zpg\zpg\zpg\x64\Debug\main.obj
-C:\Users\mer0126\Desktop\zpg\zpg\zpg\test.cpp;C:\Users\mer0126\Desktop\zpg\zpg\zpg\x64\Debug\test.obj
+C:\Users\matej\OneDrive\Plocha\zpg\zpg\zpg\App.cpp;C:\Users\matej\OneDrive\Plocha\zpg\zpg\zpg\x64\Debug\App.obj
+C:\Users\matej\OneDrive\Plocha\zpg\zpg\zpg\BasicTransformation.cpp;C:\Users\matej\OneDrive\Plocha\zpg\zpg\zpg\x64\Debug\BasicTransformation.obj
+C:\Users\matej\OneDrive\Plocha\zpg\zpg\zpg\DrawableObject.cpp;C:\Users\matej\OneDrive\Plocha\zpg\zpg\zpg\x64\Debug\DrawableObject.obj
+C:\Users\matej\OneDrive\Plocha\zpg\zpg\zpg\main.cpp;C:\Users\matej\OneDrive\Plocha\zpg\zpg\zpg\x64\Debug\main.obj
+C:\Users\matej\OneDrive\Plocha\zpg\zpg\zpg\Model.cpp;C:\Users\matej\OneDrive\Plocha\zpg\zpg\zpg\x64\Debug\Model.obj
+C:\Users\matej\OneDrive\Plocha\zpg\zpg\zpg\Rotation.cpp;C:\Users\matej\OneDrive\Plocha\zpg\zpg\zpg\x64\Debug\Rotation.obj
+C:\Users\matej\OneDrive\Plocha\zpg\zpg\zpg\Scale.cpp;C:\Users\matej\OneDrive\Plocha\zpg\zpg\zpg\x64\Debug\Scale.obj
+C:\Users\matej\OneDrive\Plocha\zpg\zpg\zpg\Scene.cpp;C:\Users\matej\OneDrive\Plocha\zpg\zpg\zpg\x64\Debug\Scene.obj
+C:\Users\matej\OneDrive\Plocha\zpg\zpg\zpg\ShaderProgram.cpp;C:\Users\matej\OneDrive\Plocha\zpg\zpg\zpg\x64\Debug\ShaderProgram.obj
+C:\Users\matej\OneDrive\Plocha\zpg\zpg\zpg\ShapeBuilder.cpp;C:\Users\matej\OneDrive\Plocha\zpg\zpg\zpg\x64\Debug\ShapeBuilder.obj
+C:\Users\matej\OneDrive\Plocha\zpg\zpg\zpg\Transformation.cpp;C:\Users\matej\OneDrive\Plocha\zpg\zpg\zpg\x64\Debug\Transformation.obj
+C:\Users\matej\OneDrive\Plocha\zpg\zpg\zpg\Translation.cpp;C:\Users\matej\OneDrive\Plocha\zpg\zpg\zpg\x64\Debug\Translation.obj

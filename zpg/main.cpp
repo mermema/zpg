@@ -1,3 +1,29 @@
+#include "App.h"
+
+int main() {
+	App* app = new App();
+	app->init();
+	app->createModels();
+	app->createShaders();
+	app->run();
+	delete app;
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 //Include GLEW
 #include <GL/glew.h>
 //Include GLFW
@@ -54,11 +80,15 @@ glm::mat4 View = glm::lookAt(
 glm::mat4 Model = glm::mat4(1.0f);
 
 
-
 float points[] = {
-	0.0f, 0.5f, 1.0f,
-	0.5f, -0.5f, 0.0f,
-   -0.5f, -0.5f, 0.0f
+	-0.5, 0.5f, 1.0f,
+	-0.5, 0.0f, 0.0f,
+   -0.0f, 0.5f, 0.0f,
+
+   -0.0f, 0.5f, 0.0f,
+	-0.5, 0.0f, 0.0f,
+	0.0f,-0.0f, 0.0f
+
 };
 
 const char* vertex_shader =
@@ -70,16 +100,19 @@ const char* vertex_shader =
 
 
 
-const char* fragment_shader =
+const char* fragment_shader = 
 "#version 330\n"
 "out vec4 fragColor;"
 "void main () {"
-"     fragColor = vec4 (0.5, 0.0, 0.5, 1.0);"
-"}";
+"     fragColor = vec4 (0, 0.8, 0.8, 1.0);"
+"}"; //zde je chyba 
+
+
 
 
 int main(void)
 {
+	//glfw init
 	GLFWwindow* window;
 	glfwSetErrorCallback(error_callback);
 	if (!glfwInit()) {
@@ -90,9 +123,9 @@ int main(void)
 	 //inicializace konkretni verze
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); //zakazani pouziti starych funkci
 	glfwWindowHint(GLFW_OPENGL_PROFILE,
-	GLFW_OPENGL_CORE_PROFILE);  //
+	GLFW_OPENGL_CORE_PROFILE);  //moderni pipeline povinne shadery
 
 	window = glfwCreateWindow(800, 600, "ZPG", NULL, NULL);
 	if (!window) {
@@ -100,10 +133,11 @@ int main(void)
 		exit(EXIT_FAILURE);
 	}
 
-	glfwMakeContextCurrent(window);
-	glfwSwapInterval(1);
+	glfwSetKeyCallback(window, key_callback);
+	glfwMakeContextCurrent(window); //ted pouzivej toto okno
+	glfwSwapInterval(1);// swap nastany kazdy 1 refresh framu na monitoru
 
-	// start GLEW extension handler
+	// init glew, glewExperimental povoluje pokrocile fce
 	glewExperimental = GL_TRUE;
 	glewInit();
 
@@ -118,10 +152,12 @@ int main(void)
 	glfwGetVersion(&major, &minor, &revision);
 	printf("Using GLFW %i.%i.%i\n", major, minor, revision);
 
+
+
 	int width, height;
-	glfwGetFramebufferSize(window, &width, &height);
-	float ratio = width / (float)height;
-	glViewport(0, 0, width, height);
+	glfwGetFramebufferSize(window, &width, &height);// vrati w a h pro nase okno
+	float ratio = width / (float)height;//pomer stran
+	glViewport(0, 0, width, height);//to co se vykresluje mapuj zde do tohoto obdelniku
 
 
 	//// instance moderniho opengl done
@@ -133,7 +169,7 @@ int main(void)
 
 	GLuint VBO = 0;
 	glGenBuffers(1, &VBO); // generate the VBO
-	glBindBuffer(GL_ARRAY_BUFFER, VBO);
+	glBindBuffer(GL_ARRAY_BUFFER, VBO);//toto rika ze se ma pracovat s timto bufferem
 	glBufferData(GL_ARRAY_BUFFER, sizeof(points), points, GL_STATIC_DRAW);
 
 	//Vertex Array Object (VAO)
@@ -146,26 +182,25 @@ int main(void)
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), NULL);
 
 
-	/*
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	glOrtho(-ratio, ratio, -1.f, 1.f, 1.f, -1.f);
-	*/
 
-	//create and compile shaders
-	GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
-	glShaderSource(vertexShader, 1, &vertex_shader, NULL);
-	glCompileShader(vertexShader);
+	//vytvori a zkompiluje shadery
+	GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER); //vytvori
+	glShaderSource(vertexShader, 1, &vertex_shader, NULL); //zkopiruje kod shadderu do opengl
+	glCompileShader(vertexShader); //zkompiluje ho
+
+
 	GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
 	glShaderSource(fragmentShader, 1, &fragment_shader, NULL);
 	glCompileShader(fragmentShader);
+
+	// tady se jakoby propoji vstupy a vystupy shradderu do jedne pipeline
 	GLuint shaderProgram = glCreateProgram();
 	glAttachShader(shaderProgram, fragmentShader);
 	glAttachShader(shaderProgram, vertexShader);
 	glLinkProgram(shaderProgram);
 
 
-	GLint status;
+	GLint status; //kontola vysledku kompilace a pripadny vypis chyby
 	glGetProgramiv(shaderProgram, GL_LINK_STATUS, &status);
 	if (status == GL_FALSE)
 	{
@@ -175,25 +210,26 @@ int main(void)
 		glGetProgramInfoLog(shaderProgram, infoLogLength, NULL, strInfoLog);
 		fprintf(stderr, "Linker failure: %s\n", strInfoLog);
 		delete[] strInfoLog;
+		return 1;
 	}
 
 
 	while (!glfwWindowShouldClose(window)) {
 		// clear color and depth buffer
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		glUseProgram(shaderProgram);
-		glBindVertexArray(VAO);
+		glUseProgram(shaderProgram);//rika opengl ze ma pouzivat ten nas zkompilovany sheder program 
+		glBindVertexArray(VAO);//pouzij toto vao ke cteni dat z bufferu (vbo)
 		// draw triangles
-		glDrawArrays(GL_TRIANGLES, 0, 3); //mode,first,count
-		// update other events like input handling
-		glfwPollEvents();
-		// put the stuff we’ve been drawing onto the display
-		glfwSwapBuffers(window);
+		glDrawArrays(GL_TRIANGLES, 0, 6); //mode,first,count
+
+		glfwPollEvents();//zkontroluje zda nenastal nejaej user event (tj nebyl zavolan nejaky callback)
+
+		glfwSwapBuffers(window);//prohodi buffery ten co je zminula za prave dokresleny..
 	}
 
 
-	glfwDestroyWindow(window);
 
+	glfwDestroyWindow(window);
 	glfwTerminate();
 	exit(EXIT_SUCCESS);
-}
+}*/
