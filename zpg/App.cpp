@@ -61,7 +61,7 @@ void App::init() {
         exit(EXIT_FAILURE);
     }
     glfwMakeContextCurrent(window);
-    glfwSetWindowUserPointer(window, this); //ulozime do okna pointer na this
+    glfwSetWindowUserPointer(window, this); //ulozime do okna pointer na this idojwkescp
     glfwSetKeyCallback(window, key_callback);
     glfwSwapInterval(1);
     glewExperimental = GL_TRUE;
