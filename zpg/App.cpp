@@ -29,7 +29,7 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action, 
     App* app = (App*)glfwGetWindowUserPointer(window);
     if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
         glfwSetWindowShouldClose(window, GL_TRUE);
-
+    cout << key;
     if (action == GLFW_PRESS) {
         if (key >= 321 && key <= 323) {
             std::cout << "stisknuto";
@@ -114,7 +114,7 @@ void App::createModels() {
     Scene* scene = new Scene();
     Scene* scene2 = new Scene();
     Scene* scene3 = new Scene();
-    currentScene = 0;
+    currentScene = 2;
 
     scene->addObject(triangleObj);
     this->scenes.push_back(scene);
