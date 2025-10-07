@@ -28,3 +28,37 @@ void DrawableObject::draw() const {
     }
     model->draw();
 }
+
+void DrawableObject::draw(const glm::mat4& view, const glm::mat4& projection) const {
+    shader->use();
+
+    if (transform) {
+        glm::mat4 modelMatrix = transform->getMatrix();
+        shader->set("modelMatrix", modelMatrix);
+    }
+
+    // Posíláme kameru
+    shader->set("viewMatrix", view);
+    shader->set("projectionMatrix", projection);
+
+    model->draw();
+}
+
+// varianta s kamerou – pouívaná ve Scene::draw(Camera*)
+void DrawableObject::draw(Camera* camera) const {
+    shader->use();
+
+    // Model matrix
+    if (transform) {
+        glm::mat4 modelMatrix = transform->getMatrix();
+        shader->set("modelMatrix", modelMatrix);
+    }
+
+    // View a Projection z kamery
+    if (camera) {
+        shader->set("viewMatrix", camera->getViewMatrix());
+        shader->set("projectionMatrix", camera->getProjectionMatrix(16.0f / 9.0f));
+    }
+
+    model->draw();
+}

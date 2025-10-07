@@ -72,9 +72,10 @@ void App::init() {
     glViewport(0, 0, width, height);
 
     glEnable(GL_DEPTH_TEST);
+
 }
 
-ShaderProgram blueShader, redShader, shader6v;
+ShaderProgram blueShader, redShader, shader6v, camerashader;
 Model squareModel, triangleModel, sph1;
 DrawableObject* triangleObj;
 DrawableObject* squareObj;
@@ -83,6 +84,10 @@ void App::createShaders() {
     blueShader.load(vertexShader, fragmentShaderBlue);
     redShader.load(vertexShader, fragmentShaderRed);
     shader6v.load(vertexShader6v, fragmentShader6v);
+
+    camerashader.load(vertexShaderModelViewProjection, fragmentShader6v);
+   // camera = new Camera(glm::vec3(0.0f, 1.0f, 5.0f), &camerashader);
+
 }
 
 // --- MODELY A OBJEKTY ---

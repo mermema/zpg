@@ -18,6 +18,18 @@ void Scene::draw() {
         obj->draw();
     }
 }
+void Scene::draw(Camera* camera) {
+    for (auto obj : objects) {
+        obj->draw(camera); // <- pøedáváme kameru dál
+    }
+}
+
+void Scene::draw(const glm::mat4& view, const glm::mat4& projection) {
+    for (auto obj : objects) {
+        obj->draw(view, projection);
+    }
+}
+
 
 void Scene::update() {
     for (auto obj : objects) {

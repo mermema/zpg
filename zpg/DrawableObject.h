@@ -12,6 +12,9 @@ public:
 
     void update(float time);
     void draw() const;
+    void draw(const glm::mat4& view, const glm::mat4& projection) const;
+    void draw(Camera * camera) const;
+
 
 private:
     Model* model;
