@@ -10,5 +10,6 @@ git pull origin main – stáhnout případné změny z GitHubu
 
 git push origin main – poslat svoje změny na GitHub
 
+git config --global http.postBuffer 524288000
 
 git pull - stahne zmeny z githubu a zmeni data v teto slozce
