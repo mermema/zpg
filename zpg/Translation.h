@@ -4,10 +4,8 @@
 
 class Translation : public BasicTransformation {
 public:
-    Translation(const glm::vec3& offset) : offset(offset) {}
-    void update(float time) override {
-        modelMatrix = glm::translate(glm::mat4(1.0f), offset);
-    }
+    Translation(const glm::vec3& offset) : offset(offset) { modelMatrix = glm::translate(glm::mat4(1.0f), offset); }
+
     glm::mat4 getMatrix() const override {
         return modelMatrix;
     }
