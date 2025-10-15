@@ -1,56 +1,110 @@
 #include "Camera.h"
-#include "ShaderProgram.h"
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/constants.hpp>
+#include <cmath>
+#include <iostream>
 
-Camera::Camera(glm::vec3 position)
-    : eye(position), up(0, 1, 0), yaw(-90.0f), pitch(0.0f) {
+Camera::Camera(float fov, float zNear, float zFar)
+    : fov(fov), zNear(zNear), zFar(zFar),
+    eye(0.0f, 0.0f, 5.0f),
+    up(0.0f, 1.0f, 0.0f),
+    yaw(-90.0f), pitch(0.0f)
+{
+    recalculateTarget();
+    calculateViewMatrix();
+    projectionMatrix = glm::perspective(glm::radians(fov), 800.0f / 600.0f, zNear, zFar);
+
 }
 
-void Camera::addObserver(ShaderProgram* shader) {
-    observers.push_back(shader);
+void Camera::recalculateTarget() {
+    double radPitch = glm::radians(this->pitch);
+    double radYaw = glm::radians(this->yaw);
+
+    target.x = std::cos(radPitch) * std::cos(radYaw);
+    target.z = std::cos(radPitch) * std::sin(radYaw);
+    target.y = std::sin(radPitch);
+
+    notifyObservers(); // Informuj pozorovatele
+}
+
+void Camera::calculateViewMatrix() {
+    viewMatrix = glm::lookAt(eye, eye + target, up);
+}
+
+void Camera::forward(float rate) {
+    eye += glm::normalize(target) * rate;
+    notifyObservers();
+}
+
+void Camera::backward(float rate) {
+    eye -= glm::normalize(target) * rate;
+    notifyObservers();
+}
+
+void Camera::toLeft(float rate) {
+    eye -= glm::normalize(glm::cross(target, up)) * rate;
+    notifyObservers();
+}
+
+void Camera::toRight(float rate) {
+    eye += glm::normalize(glm::cross(target, up)) * rate;
+    notifyObservers();
+}
+
+void Camera::changeYaw(float deg) {
+    yaw += deg;
+    if (yaw >= 360.f) yaw -= 360.f;
+    if (yaw <= -360.f) yaw += 360.f;
+
+    recalculateTarget();
+}
+
+void Camera::changePitch(float deg) {
+    pitch += deg;
+    if (pitch > 89.f) pitch = 89.f;
+    if (pitch < -89.f) pitch = -89.f;
+
+    recalculateTarget();
+}
+/*
+
+glm::mat4 Camera::getViewMatrix() const {
+    return viewMatrix;
+}
+
+glm::vec3 Camera::getPosition() const {
+    return eye;
+}
+*/
+
+
+glm::vec3 Camera::getTarget() const {
+    return target;
+}
+void Camera::enable() {
+    enabled = true;
+}
+
+void Camera::disable() {
+    enabled = false;
+}
+
+bool Camera::getStatus() const {
+    return enabled;
+}
+
+void Camera::applyToShader(ShaderProgram* shader) {
+    shader->use();
+    shader->set("view", viewMatrix);
+    shader->set("projection", projectionMatrix);
+    shader->set("viewPos", eye);
 }
 
 void Camera::notifyObservers() {
-    for (auto* shader : observers) {
-        shader->use();
-        shader->set("viewMatrix", getViewMatrix());
-        shader->set("projectionMatrix", getProjectionMatrix(800.0f / 600.0f)); // nebo pøedat aspect ratio dynamicky
+    calculateViewMatrix();
+    std::cout << "Camera notifying " << observers.size() << " observers" << std::endl;
+    for (Observer* observer : observers) {
+        std::cout << "Notifying observer..." << std::endl;
+        observer->update(this);
     }
-}
-
-glm::mat4 Camera::getViewMatrix() const {
-    glm::vec3 front;
-    front.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
-    front.y = sin(glm::radians(pitch));
-    front.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
-    return glm::lookAt(eye, eye + glm::normalize(front), up);
-}
-
-glm::mat4 Camera::getProjectionMatrix(float aspectRatio) const {
-    return glm::perspective(glm::radians(45.0f), aspectRatio, 0.1f, 100.0f);
-}
-
-void Camera::processKeyboard(float deltaTime, bool forward, bool backward, bool left, bool right) {
-    float speed = 2.5f * deltaTime;
-    glm::vec3 front = glm::normalize(glm::vec3(
-        cos(glm::radians(yaw)) * cos(glm::radians(pitch)),
-        sin(glm::radians(pitch)),
-        sin(glm::radians(yaw)) * cos(glm::radians(pitch))
-    ));
-    glm::vec3 rightVec = glm::normalize(glm::cross(front, up));
-
-    if (forward) eye += speed * front;
-    if (backward) eye -= speed * front;
-    if (left) eye -= speed * rightVec;
-    if (right) eye += speed * rightVec;
-
-    notifyObservers(); // po pohybu hned aktualizujeme shadery
-}
-
-void Camera::processMouse(float dx, float dy) {
-    float sensitivity = 0.1f;
-    yaw += dx * sensitivity;
-    pitch += dy * sensitivity;
-    if (pitch > 89.0f) pitch = 89.0f;
-    if (pitch < -89.0f) pitch = -89.0f;
-    notifyObservers();
 }

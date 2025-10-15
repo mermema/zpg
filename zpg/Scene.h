@@ -9,12 +9,12 @@ public:
 
     void addObject(DrawableObject* obj);
     void draw();
-    void draw(Camera* camera);
-    void draw(const glm::mat4& view, const glm::mat4& projection);
     void update();
     const std::vector<DrawableObject*>& getObjects() const { return objects; }
-
+    void setCamera(Camera* cam) { camera = cam; }
+    Camera* getCamera() { return camera; }
 
 private:
     std::vector<DrawableObject*> objects;
+    Camera* camera = nullptr;
 };

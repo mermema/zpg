@@ -1,3 +1,1 @@
-﻿  App.cpp
-LINK : warning LNK4098: Výchozí knihovna MSVCRT je v konfliktu s použitím jiných knihoven. Použijte /NODEFAULTLIB:library.
-  zpg.vcxproj -> C:\Users\matej\Desktop\zpg\x64\Debug\zpg.exe
+﻿  zpg.vcxproj -> C:\Users\mer0126\Desktop\zpg\x64\Debug\zpg.exe

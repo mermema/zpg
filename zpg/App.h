@@ -13,8 +13,11 @@ public:
     void createModels();
     void run();
     int currentScene;
-    Camera* camera;
-
+    Scene* getScene(int index) {
+        if (index >= 0 && index < scenes.size())
+            return scenes[index];
+        return nullptr;
+    }
 
 
 private:
