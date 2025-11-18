@@ -1,3 +1,5 @@
-﻿  Light.cpp
-LINK : warning LNK4098: Výchozí knihovna MSVCRT je v konfliktu s použitím jiných knihoven. Použijte /NODEFAULTLIB:library.
+﻿  SolarSystemScene.cpp
+C:\Users\matej\Desktop\zpg\zpg\ShaderLoader.h(5,10): warning C4067: Po direktivě preprocesoru byly neočekávané tokeny – očekával se nový řádek.
+  (kompilování zdrojového souboru SolarSystemScene.cpp)
+  
   zpg.vcxproj -> C:\Users\matej\Desktop\zpg\x64\Debug\zpg.exe

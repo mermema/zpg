@@ -18,7 +18,7 @@ public:
             return scenes[index];
         return nullptr;
     }
-
+    void setCurrentScene(int index);
 
 private:
     GLFWwindow* window;

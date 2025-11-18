@@ -1,6 +1,7 @@
-#include "ShaderProgram.h"
+﻿#include "ShaderProgram.h"
 #include <iostream>
 #include <glm/gtc/type_ptr.hpp>
+#include "Scene.h"
 
 ShaderProgram::ShaderProgram(vector<Shader*>& shaders) {
     programId = glCreateProgram();
@@ -9,7 +10,6 @@ ShaderProgram::ShaderProgram(vector<Shader*>& shaders) {
         shader->attachShader(programId);
     }
 
-    // Link
     glLinkProgram(programId);
 
     GLint success;
@@ -43,48 +43,13 @@ ShaderProgram::ShaderProgram(vector<std::shared_ptr<Shader>>& shaders) {
 
     }
 }
-/*
-static GLuint compileShader(const string& src, GLenum type) {
-    GLuint shader = glCreateShader(type);
-    const char* csrc = src.c_str();
-    glShaderSource(shader, 1, &csrc, nullptr);
-    glCompileShader(shader);
 
-    GLint success;
-    glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
-    if (!success) {
-        char log[512];
-        glGetShaderInfoLog(shader, 512, nullptr, log);
-        cerr << "Shader compile error: " << log << endl;
-    }
-    return shader;
-}
-
-bool ShaderProgram::load(const string& vertexSrc, const string& fragmentSrc) {
-    GLuint vs = compileShader(vertexSrc, GL_VERTEX_SHADER);
-    GLuint fs = compileShader(fragmentSrc, GL_FRAGMENT_SHADER);
-
-    programId = glCreateProgram();
-    glAttachShader(programId, vs);
-    glAttachShader(programId, fs);
-    glLinkProgram(programId);
-
-    GLint success;
-    glGetProgramiv(programId, GL_LINK_STATUS, &success);
-    if (!success) {
-        char log[512];
-        glGetProgramInfoLog(programId, 512, nullptr, log);
-        cerr << "Program link error: " << log << endl;
-        return false;
-    }
-
-    glDeleteShader(vs);
-    glDeleteShader(fs);
-    return true;
-}
-*/
 void ShaderProgram::use() const {
     glUseProgram(programId);
+}
+
+void ShaderProgram::unset() const {
+    glUseProgram(0);
 }
 
 ShaderProgram::~ShaderProgram() {
@@ -115,16 +80,115 @@ void ShaderProgram::set(const string& name, const glm::mat4& value) const {
     GLint loc = glGetUniformLocation(programId, name.c_str());
     glUniformMatrix4fv(loc, 1, GL_FALSE, glm::value_ptr(value));
 }
+
+
+void ShaderProgram::setMaterial(glm::vec3 ambient, glm::vec3 diffuse, glm::vec3 specular, float shininess)
+{   
+    const std::string& prefix = "material";
+    set(prefix + ".ambient", ambient);
+    set(prefix + ".diffuse", diffuse);
+    set(prefix + ".specular", specular);
+    set(prefix + ".shininess", shininess);
+
+}
+
+void ShaderProgram::setSkyDomeTexture(int value)
+{
+    set("skyTexture", value);
+}
+
+void ShaderProgram::setSkybox(int value)
+{
+    set("skybox", value);
+}
+void ShaderProgram::setViewMatrix(glm::mat4 matrix)
+{
+    set("view", matrix);
+}
+void ShaderProgram::setProjectionMatrix(glm::mat4 matrix)
+{
+    set("projection", matrix);
+}
+void ShaderProgram::setModelMatrix(glm::mat4 matrix)
+{
+    set("model", matrix);
+}
+
+
+void ShaderProgram::setHasTexture(int value)
+{
+    set("hasTexture", value);
+}
+
+void ShaderProgram::setLightUniforms(int lightindex, int type, glm::vec3 color, glm::mat4 lightMatrix, float intensity, float constant, float linear, float quadratic)
+{   
+    std::string base = "lights[" + std::to_string(lightindex) + "].";
+
+    set(base + "type", type);
+    set(base + "color", color); // Barva s intenzitou
+    set(base + "lightMatrix", lightMatrix); // Transformační matice
+    set(base + "intensity", intensity);
+    set(base + "constant", constant);
+    set(base + "linear", linear);
+    set(base + "quadratic", quadratic);
+
+}
+
+void ShaderProgram::setLightAngle(int lightindex, float angle)
+{
+    std::string base = "lights[" + std::to_string(lightindex) + "].";
+    set(base + "angle", angle);
+}
+
+void ShaderProgram::setLightDirection(int lightindex, glm::vec3 direction)
+{
+    std::string base = "lights[" + std::to_string(lightindex) + "].";
+    set(base + "direction", direction);
+}
+
+void ShaderProgram::setObjectColor(glm::vec3 color)
+{
+    set("objectColor", color);
+}
+
+
+void ShaderProgram::setMaterialDifuseMap(int textureUnit)
+{
+    set("material.diffuseMap", textureUnit);
+}
+
+void ShaderProgram::setNumberOfLights(int value)
+{
+    set("numberOfLights", value);
+}
+
+void ShaderProgram::CameraViewPos(glm::vec3 eyePos)
+{
+    set("viewPos", eyePos);
+}
+
+
+
+
+
 void ShaderProgram::update(Observable* who) {
     Camera* camera = dynamic_cast<Camera*>(who);
     if (camera) {
-        std::cout << "ShaderProgram::update() called - setting camera uniforms" << std::endl;
         use();
+
+
+
         camera->applyToShader(this);
 
-        // Kontrola jestli se uniformy nastavuj�
-        GLint viewLoc = glGetUniformLocation(programId, "view");
-        GLint projLoc = glGetUniformLocation(programId, "projection");
-        std::cout << "Uniform locations - view: " << viewLoc << ", projection: " << projLoc << std::endl;
+        return;
     }
+
+    Light* light = dynamic_cast<Light*>(who);
+    if (light) {
+        use();
+        light->applyToShader(this);
+        return;
+    }
+    unset();
 }
+

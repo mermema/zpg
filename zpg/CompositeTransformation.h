@@ -2,6 +2,7 @@
 #include <vector>
 #include <glm/glm.hpp>
 #include "BasicTransformation.h"
+#include "DynamicTransformation.h"
 
 class CompositeTransformation :public BasicTransformation {
 public:
@@ -9,8 +10,11 @@ public:
     ~CompositeTransformation() override;
 
     void add(BasicTransformation* t);
-    void update(float time);
+    void insert(BasicTransformation* t);
     glm::mat4 getMatrix() const;
+
+
+    bool hasDynamicTransformations();
 
 private:
     std::vector<BasicTransformation*> transformations;

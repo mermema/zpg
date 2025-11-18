@@ -6,13 +6,13 @@
 
 Camera::Camera(float fov, float zNear, float zFar)
     : fov(fov), zNear(zNear), zFar(zFar),
-    eye(0.0f, 0.0f, 5.0f),
     up(0.0f, 1.0f, 0.0f),
     yaw(-90.0f), pitch(0.0f)
 {
+    setPosition(glm::vec3(0.0f, 0.0f, 5.0f));
     recalculateTarget();
     calculateViewMatrix();
-    projectionMatrix = glm::perspective(glm::radians(fov), 800.0f / 600.0f, zNear, zFar);
+    projectionMatrix = glm::perspective(glm::radians(fov), aspectRatio , zNear, zFar);
 
 }
 
@@ -53,10 +53,11 @@ void Camera::toRight(float rate) {
 
 void Camera::changeYaw(float deg) {
     yaw += deg;
-    if (yaw >= 360.f) yaw -= 360.f;
-    if (yaw <= -360.f) yaw += 360.f;
+    //if (yaw >= 360.f) yaw -= 360.f;
+    //if (yaw <= -360.f) yaw += 360.f;
 
     recalculateTarget();
+
 }
 
 void Camera::changePitch(float deg) {
@@ -95,16 +96,35 @@ bool Camera::getStatus() const {
 
 void Camera::applyToShader(ShaderProgram* shader) {
     shader->use();
-    shader->set("view", viewMatrix);
-    shader->set("projection", projectionMatrix);
-    shader->set("viewPos", eye);
+    shader->setViewMatrix(viewMatrix);
+    shader->setProjectionMatrix(projectionMatrix);
+    shader->CameraViewPos(eye);
+    shader->unset();
 }
 
 void Camera::notifyObservers() {
     calculateViewMatrix();
     std::cout << "Camera notifying " << observers.size() << " observers" << std::endl;
     for (Observer* observer : observers) {
-        std::cout << "Notifying observer..." << std::endl;
         observer->update(this);
     }
+}
+void Camera::setTarget(const glm::vec3& newTarget) {
+    glm::vec3 direction = glm::normalize(newTarget - eye);
+
+    // yaw and pitch recalc
+    pitch = glm::degrees(asin(direction.y));
+    yaw = glm::degrees(atan2(direction.z, direction.x));
+
+    recalculateTarget();
+}
+
+void Camera::setAspectRatio(float newAspect) {
+    if (newAspect <= 0.0f || newAspect > 10  || isnan(newAspect))
+    {
+        return;
+    }
+    aspectRatio = newAspect;
+    projectionMatrix = glm::perspective(glm::radians(fov), aspectRatio, zNear, zFar);
+    notifyObservers();
 }

@@ -136,17 +136,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AmbientLight.cpp" />
     <ClCompile Include="App.cpp" />
+    <ClCompile Include="BallScene.cpp" />
     <ClCompile Include="BasicTransformation.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="DirectionaLight.cpp" />
     <ClCompile Include="DrawableObject.cpp" />
     <ClCompile Include="DynamicRotation.cpp" />
     <ClCompile Include="DynamicTransformation.cpp" />
+    <ClCompile Include="Firefly.cpp" />
+    <ClCompile Include="FlashLight.cpp" />
+    <ClCompile Include="ForrestScene.cpp" />
     <ClCompile Include="Light.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Material.cpp" />
     <ClCompile Include="Model.cpp" />
+    <ClCompile Include="ObjectScene.cpp" />
+    <ClCompile Include="ObjModel.cpp" />
     <ClCompile Include="Observable.cpp" />
     <ClCompile Include="Observer.cpp" />
+    <ClCompile Include="plain.cpp" />
+    <ClCompile Include="PointLight.cpp" />
+    <ClCompile Include="RandomTranslation.cpp" />
+    <ClCompile Include="ReflectorLight.cpp" />
     <ClCompile Include="Rotation.cpp" />
     <ClCompile Include="Scale.cpp" />
     <ClCompile Include="Scene.cpp" />
@@ -155,6 +168,12 @@
     <ClCompile Include="ShaderProgram.cpp" />
     <ClCompile Include="ShapeBuilder.cpp" />
     <ClCompile Include="CompositeTransformation.cpp" />
+    <ClCompile Include="SkyBox.cpp" />
+    <ClCompile Include="SkyDome.cpp" />
+    <ClCompile Include="SkyObject.cpp" />
+    <ClCompile Include="SolarSystemScene.cpp" />
+    <ClCompile Include="sphere.cpp" />
+    <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Translation.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -165,16 +184,28 @@
     <ClInclude Include="..\..\..\..\..\Downloads\Models\Models\suzi_flat.h" />
     <ClInclude Include="..\..\..\..\..\Downloads\Models\Models\suzi_smooth.h" />
     <ClInclude Include="..\..\..\..\..\Downloads\Models\Models\tree.h" />
+    <ClInclude Include="AmbientLight.h" />
     <ClInclude Include="App.h" />
+    <ClInclude Include="BallScene.h" />
     <ClInclude Include="BasicTransformation.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="DirectionaLight.h" />
     <ClInclude Include="DrawableObject.h" />
     <ClInclude Include="DynamicRotation.h" />
     <ClInclude Include="DynamicTransformation.h" />
+    <ClInclude Include="Firefly.h" />
+    <ClInclude Include="FlashLight.h" />
     <ClInclude Include="ForrestScene.h" />
     <ClInclude Include="Light.h" />
+    <ClInclude Include="Material.h" />
+    <ClInclude Include="ObjectScene.h" />
+    <ClInclude Include="ObjModel.h" />
     <ClInclude Include="Observable.h" />
     <ClInclude Include="Observer.h" />
+    <ClInclude Include="PointLight.h" />
+    <ClInclude Include="RandomTranslation.h" />
+    <ClInclude Include="ReflectorLight.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Rotation.h" />
     <ClInclude Include="Scale.h" />
     <ClInclude Include="Scene.h" />
@@ -185,7 +216,17 @@
     <ClInclude Include="ShaderProgram.h" />
     <ClInclude Include="Shaders.h" />
     <ClInclude Include="CompositeTransformation.h" />
+    <ClInclude Include="SkyBox.h" />
+    <ClInclude Include="SkyDome.h" />
+    <ClInclude Include="SkyObject.h" />
+    <ClInclude Include="SolarSystemScene.h" />
+    <ClInclude Include="stb_image.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="tiny_obj_loader.h" />
     <ClInclude Include="Translation.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="zpg.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
