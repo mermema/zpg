@@ -5,10 +5,8 @@ SkyDome::SkyDome(ShaderProgram* shaderProgram, const std::string& objPath, const
     : Texture(Material(glm::vec3(1.0f), glm::vec3(1.0f), glm::vec3(1.0f), 1.0f)),
     shader(shaderProgram) {
 
-    // Naètení OBJ modelu
     domeModel = new ObjModel(objPath.c_str());
 
-    // Naètení 2D textury (na rozdíl od cubemapu u SkyBoxu)
     loadTexture(texturePath);
 
     std::cout << "SkyDome created from OBJ: " << objPath << std::endl;
@@ -25,7 +23,7 @@ void SkyDome::applyToShader(ShaderProgram* shader) {
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, textureID);
         shader->setSkyDomeTexture(0);  
-        shader->unset();
+        
 
     
 }
@@ -42,7 +40,7 @@ void SkyDome::draw(const glm::mat4& view, const glm::mat4& projection) {
 
     applyToShader(shader);
 
-    //render skydome model
+    //render 
     domeModel->draw();
     shader->unset();
 }

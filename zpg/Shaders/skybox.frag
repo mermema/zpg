@@ -9,5 +9,4 @@ uniform samplerCube skybox;
 void main()
 {
     FragColor = texture(skybox, TexCoords);
-    //Žádné výpočty světel, žádné materiály - pouze sample textury!
 }

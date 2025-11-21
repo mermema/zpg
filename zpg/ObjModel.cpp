@@ -31,12 +31,12 @@ void ObjModel::loadOBJ(const char* objFileName) {
 
     for (const auto& shape : shapes) {
         for (const auto& index : shape.mesh.indices) {
-            // Pozice
+            //position
             vertices.push_back(attrib.vertices[3 * index.vertex_index + 0]);
             vertices.push_back(attrib.vertices[3 * index.vertex_index + 1]);
             vertices.push_back(attrib.vertices[3 * index.vertex_index + 2]);
 
-            // Normály (pokud existují)
+            //normmals (if exists)
             if (index.normal_index >= 0) {
                 vertices.push_back(attrib.normals[3 * index.normal_index + 0]);
                 vertices.push_back(attrib.normals[3 * index.normal_index + 1]);
@@ -50,7 +50,7 @@ void ObjModel::loadOBJ(const char* objFileName) {
 
 
 
-            if (index.texcoord_index >= 0) {
+            if (index.texcoord_index >= 0) { //texture cords UV
                 vertices.push_back(attrib.texcoords[2 * index.texcoord_index + 0]);
                 vertices.push_back(attrib.texcoords[2 * index.texcoord_index + 1]);
             }

@@ -140,6 +140,7 @@
     <ClCompile Include="App.cpp" />
     <ClCompile Include="BallScene.cpp" />
     <ClCompile Include="BasicTransformation.cpp" />
+    <ClCompile Include="CallbackHandler.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="DirectionaLight.cpp" />
     <ClCompile Include="DrawableObject.cpp" />
@@ -151,6 +152,7 @@
     <ClCompile Include="Light.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Material.cpp" />
+    <ClCompile Include="MatrixTransformation.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="ObjectScene.cpp" />
     <ClCompile Include="ObjModel.cpp" />
@@ -160,6 +162,7 @@
     <ClCompile Include="PointLight.cpp" />
     <ClCompile Include="RandomTranslation.cpp" />
     <ClCompile Include="ReflectorLight.cpp" />
+    <ClCompile Include="ReflectorTestScene.cpp" />
     <ClCompile Include="Rotation.cpp" />
     <ClCompile Include="Scale.cpp" />
     <ClCompile Include="Scene.cpp" />
@@ -169,6 +172,7 @@
     <ClCompile Include="ShapeBuilder.cpp" />
     <ClCompile Include="CompositeTransformation.cpp" />
     <ClCompile Include="SkyBox.cpp" />
+    <ClCompile Include="SkyBoxScene.cpp" />
     <ClCompile Include="SkyDome.cpp" />
     <ClCompile Include="SkyObject.cpp" />
     <ClCompile Include="SolarSystemScene.cpp" />
@@ -188,6 +192,7 @@
     <ClInclude Include="App.h" />
     <ClInclude Include="BallScene.h" />
     <ClInclude Include="BasicTransformation.h" />
+    <ClInclude Include="CallbackHandler.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="DirectionaLight.h" />
     <ClInclude Include="DrawableObject.h" />
@@ -198,6 +203,7 @@
     <ClInclude Include="ForrestScene.h" />
     <ClInclude Include="Light.h" />
     <ClInclude Include="Material.h" />
+    <ClInclude Include="MatrixTransformation.h" />
     <ClInclude Include="ObjectScene.h" />
     <ClInclude Include="ObjModel.h" />
     <ClInclude Include="Observable.h" />
@@ -205,6 +211,7 @@
     <ClInclude Include="PointLight.h" />
     <ClInclude Include="RandomTranslation.h" />
     <ClInclude Include="ReflectorLight.h" />
+    <ClInclude Include="ReflectorTestScene.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Rotation.h" />
     <ClInclude Include="Scale.h" />
@@ -214,9 +221,9 @@
     <ClInclude Include="ShapeBuilder.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="ShaderProgram.h" />
-    <ClInclude Include="Shaders.h" />
     <ClInclude Include="CompositeTransformation.h" />
     <ClInclude Include="SkyBox.h" />
+    <ClInclude Include="SkyBoxScene.h" />
     <ClInclude Include="SkyDome.h" />
     <ClInclude Include="SkyObject.h" />
     <ClInclude Include="SolarSystemScene.h" />

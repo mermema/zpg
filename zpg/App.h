@@ -1,26 +1,33 @@
 #pragma once
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
-#include "ShaderProgram.h"
-#include "Model.h"
-#include "DrawableObject.h"
-#include "Scene.h"
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include "CallbackHandler.h"
+
+#include <iostream>
+#include "BallScene.h"
+#include "ForrestScene.h"
+#include "ObjectScene.h"
+#include "SolarSystemScene.h"
+#include "ReflectorTestScene.h"
+#include "SkyBoxScene.h"
 
 class App {
 public:
     void init();
-    void createShaders();
-    void createModels();
     void run();
-    int currentScene;
     Scene* getScene(int index) {
         if (index >= 0 && index < scenes.size())
             return scenes[index];
         return nullptr;
     }
     void setCurrentScene(int index);
+    void createScenes();
+    int GetCurrentSceneIndex() {return currentScene;}
 
 private:
+    int currentScene;
     GLFWwindow* window;
     vector<Scene*> scenes;
 };

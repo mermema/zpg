@@ -4,15 +4,15 @@
 
 class Material {
 private:
-    glm::vec3 ambient;      // ra
-    glm::vec3 diffuse;      // rd  
-    glm::vec3 specular;     // rs
-    float shininess;        // h
+    glm::vec3 ambient;      
+    glm::vec3 diffuse;       
+    glm::vec3 specular;     
+    float shininess;        
 
 public:
-    Material(glm::vec3 amb = glm::vec3(0.1f),
+    Material(glm::vec3 amb = glm::vec3(0.05f),
         glm::vec3 diff = glm::vec3(1.0f),
-        glm::vec3 spec = glm::vec3(0.5f),
+        glm::vec3 spec = glm::vec3(0.8f),
         float shine = 32.0f)
         : ambient(amb), diffuse(diff), specular(spec), shininess(shine) {
     }
@@ -20,13 +20,6 @@ public:
     void applyToShader(ShaderProgram* shader) {
         
         shader->setMaterial(ambient, diffuse, specular, shininess);
-        /*shader->use();
-        shader->set(prefix + ".ambient", ambient);
-        shader->set(prefix + ".diffuse", diffuse);
-        shader->set(prefix + ".specular", specular);
-        shader->set(prefix + ".shininess", shininess);
-        //shader->unset(); //---> unseting in texture!!!
-    */
     }
 
     glm::vec3 getAmbient() const { return ambient; }

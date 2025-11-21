@@ -11,11 +11,8 @@ using namespace std;
 
 class ShaderProgram : public Observer {
 public:
-    ShaderProgram(vector<std::shared_ptr<Shader>>& shaders);
     ShaderProgram(vector<Shader*>& shaders);
     ~ShaderProgram();
-
-    bool load(const string& vertexSrc, const string& fragmentSrc);
 
     void use() const;
     void unset() const;

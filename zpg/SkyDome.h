@@ -15,7 +15,6 @@ public:
     ~SkyDome();
 
     void applyToShader(ShaderProgram* shader);
-    //void loadTexture(const std::string& texturePath);
     void draw(const glm::mat4& view, const glm::mat4& projection) override;
     ShaderProgram* getShader() const override { return shader; }
 };

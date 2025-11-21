@@ -20,30 +20,6 @@ ShaderProgram::ShaderProgram(vector<Shader*>& shaders) {
         std::cerr << "Program link error:\n" << log << std::endl;
     }
 }
-
-ShaderProgram::ShaderProgram(vector<std::shared_ptr<Shader>>& shaders) {
-    programId = glCreateProgram();
-    if (!programId) {
-        std::cerr << "ERROR: glCreateProgram failed!" << std::endl;
-        return;
-    }
-
-    for (auto& shader : shaders) {
-        shader->attachShader(programId);
-    }
-
-    glLinkProgram(programId);
-
-    GLint success;
-    glGetProgramiv(programId, GL_LINK_STATUS, &success);
-    if (!success) {
-        char log[2048];
-        glGetProgramInfoLog(programId, sizeof(log), nullptr, log);
-        std::cerr << "Program link error:\n" << log << std::endl;
-
-    }
-}
-
 void ShaderProgram::use() const {
     glUseProgram(programId);
 }
@@ -125,8 +101,8 @@ void ShaderProgram::setLightUniforms(int lightindex, int type, glm::vec3 color, 
     std::string base = "lights[" + std::to_string(lightindex) + "].";
 
     set(base + "type", type);
-    set(base + "color", color); // Barva s intenzitou
-    set(base + "lightMatrix", lightMatrix); // Transformační matice
+    set(base + "color", color); 
+    set(base + "lightMatrix", lightMatrix);
     set(base + "intensity", intensity);
     set(base + "constant", constant);
     set(base + "linear", linear);

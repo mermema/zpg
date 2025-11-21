@@ -4,7 +4,7 @@
 class ReflectorLight : public Light {
 protected:
     glm::vec3 direction;
-    float angle;         // VNÌJŠÍ úhel ve stupních
+    float angle;         //angle in degrees
 
 public:
     ReflectorLight(const glm::vec3& pos = glm::vec3(0.0f),

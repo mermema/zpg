@@ -36,17 +36,11 @@ vector<glm::vec3> ShapeBuilder::makeCube(const glm::vec3& minCorner, const glm::
     glm::vec3 tlf(minCorner.x, maxCorner.y, maxCorner.z);
     glm::vec3 trf(maxCorner.x, maxCorner.y, maxCorner.z);
 
-    // Spodní stìna
     verts.insert(verts.end(), { blb, brb, tlb, brb, trb, tlb });
-    // Horní stìna
     verts.insert(verts.end(), { blf, tlf, brf, brf, tlf, trf });
-    // Pøední stìna
     verts.insert(verts.end(), { blf, brf, blb, brf, brb, blb });
-    // Zadní stìna
     verts.insert(verts.end(), { tlf, trf, tlb, trf, trb, tlb });
-    // Levá stìna
     verts.insert(verts.end(), { blf, blb, tlf, blb, tlb, tlf });
-    // Pravá stìna
     verts.insert(verts.end(), { brf, trf, brb, trf, trb, brb });
 
     return verts;

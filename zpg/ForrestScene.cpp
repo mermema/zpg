@@ -14,6 +14,7 @@ void ForrestScene::create()
         1.0f, 0.0f, 1.0f,   0.0f, 1.0f, 0.0f,   0.0f, 0.0f,
        -1.0f, 0.0f,-1.0f,   0.0f, 1.0f, 0.0f,   10.0f, 10.0f
     };
+    this->enableMouseActions();
 
     static Model modeltree;
     static Model medelbush;
@@ -45,7 +46,6 @@ void ForrestScene::create()
     camera->setTarget(glm::vec3(0.0f));
     this->setCamera(camera);
 
-    //  HLAVNÍ SVÌTLO - SNÍŽENÁ INTENZITA
     auto* mainLight = new DirectionalLight(glm::vec3(1, -1, 1), glm::vec3(1.0f, 0.9f, 0.7f), 0.1f);
 
     this->addLight(mainLight);
@@ -53,11 +53,10 @@ void ForrestScene::create()
 
     auto* flashlight = new Flashlight(camera);
     this->addLight(flashlight);
-    // SEZNAM VŠECH SVÌTEL PRO REGISTRACI
+
     std::vector<Light*> allLights;
     allLights.push_back(mainLight);
     allLights.push_back(flashlight);
-    //fireflies
     for (int i = 0; i < 10; i++) {
         float posX = (rand() % 400 - 200) / 10.0f;
         float posZ = (rand() % 400 - 200) / 10.0f;
@@ -66,7 +65,7 @@ void ForrestScene::create()
         auto* fireflyLight = new Light(
             glm::vec3(0.0f, 0.0f, 0.0f),
             glm::vec3(1, 1, 1),
-            0.2f  // VELMI NÍZKÁ INTENZITA
+            0.2f 
         );
         fireflyLight->setAttenuation(0.2, 0.2, 0.5);
         CompositeTransformation* t = new CompositeTransformation();
@@ -89,8 +88,8 @@ void ForrestScene::create()
 
         glm::vec3(0.01f),
         glm::vec3(0),
-        glm::vec3(0),     // specular
-        32.0f               // shininess
+        glm::vec3(0),     
+        32.0f               
         );
 
     Texture* grassTexture = new Texture(defaultMaterial, "../zpg/Objects/grass.png");
@@ -105,12 +104,11 @@ void ForrestScene::create()
 
 
 
-    // ?? LES - STROMY
     vertexCount = sizeof(tree) / (6 * sizeof(float));
     modeltree.upload(tree, vertexCount);
 
     int gridSize = 9;
-    float spacing = 10.0f;
+    float spacing = 5.0f;
     float startOffset = -(gridSize - 1) * spacing * 0.5f;
 
     for (int row = 0; row < gridSize; row++) {
@@ -122,8 +120,8 @@ void ForrestScene::create()
             float baseX = startOffset + col * spacing;
             float baseZ = startOffset + row * spacing;
 
-            float randomOffsetX = (rand() / (float)RAND_MAX * 2.0f - 1.0f) * 5.f;
-            float randomOffsetZ = (rand() / (float)RAND_MAX * 2.0f - 1.0f) * 5.0f;
+            float randomOffsetX = (rand() / (float)RAND_MAX * 2.0f - 1.0f) * 2.5f;
+            float randomOffsetZ = (rand() / (float)RAND_MAX * 2.0f - 1.0f) * 2.5f;
 
             t->add(new Translation(glm::vec3(baseX + randomOffsetX, 0, baseZ + randomOffsetZ)));
             bushObj->setTransformation(t);
@@ -131,7 +129,7 @@ void ForrestScene::create()
         }
     }
 
-    // ?? KEØE
+
     vertexCount = sizeof(bushes) / (6 * sizeof(float));
     medelbush.upload(bushes, vertexCount);
 
@@ -141,11 +139,11 @@ void ForrestScene::create()
             CompositeTransformation* t = new CompositeTransformation();
             t->add(new Scale(glm::vec3(2.0f)));
 
-            float baseX = startOffset * 0.25 + col * spacing * 0.25;
-            float baseZ = startOffset * 0.25 + row * spacing * 0.25;
+            float baseX = startOffset+ col * spacing;
+            float baseZ = startOffset+ row * spacing;
 
-            float randomOffsetX = (rand() / (float)RAND_MAX * 2.0f - 1.0f) * 5.f;
-            float randomOffsetZ = (rand() / (float)RAND_MAX * 2.0f - 1.0f) * 5.0f;
+            float randomOffsetX = (rand() / (float)RAND_MAX * 2.0f - 1.0f) * 2.5f;
+            float randomOffsetZ = (rand() / (float)RAND_MAX * 2.0f - 1.0f) * 2.5f;
 
             t->add(new Translation(glm::vec3(baseX + randomOffsetX, 0, baseZ + randomOffsetZ)));
             bushObj->setTransformation(t);
@@ -193,26 +191,12 @@ void ForrestScene::create()
 
 
 
-    // ?? JEDINÁ REGISTRACE - VŠECHNY OBJEKTY KE KAMEØE A SVÌTLÙM
-    std::unordered_set<ShaderProgram*> registeredShaders;
+    //registration
+    this->registerAllShadersToAllLightsAndNotify();
 
-    for (auto obj : this->getObjects()) {
-        ShaderProgram* shader = obj->getShader();
-        if (shader && registeredShaders.find(shader) == registeredShaders.end()) {
-            camera->registerObserver(shader);
-            for (auto light : allLights) {
-                light->registerObserver(shader);
-            }
-            registeredShaders.insert(shader);
-        }
-    }
 
-    // ?? JEDINÁ NOTIFIKACE NA KONCI
-    camera->notifyObservers();
-    for (auto light : allLights) {
-        light->notifyObservers();
-        
-    }
+
+    this->registerAllObjectsToCameraAndNotify();
     this->enableFlashlight();
 
 

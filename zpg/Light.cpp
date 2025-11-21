@@ -5,7 +5,7 @@
 Light::Light( const glm::vec3& pos, const glm::vec3& col, float intens)
     : color(col), intensity(intens), index(-1)
 {
-    // Vytvoøíme základní transformaci s pozicí
+    //cration of basic transformation with translation to target position
     transform = new CompositeTransformation();
     transform->add(new Translation(pos));
 }
@@ -22,7 +22,6 @@ void Light::setTransform(CompositeTransformation* t) {
 }
 
 void Light::setPosition(const glm::vec3& newPos) {
-    // Jednodušší zpùsob - vytvoøíme novou transformaci
     delete transform;
     transform = new CompositeTransformation();
     transform->add(new Translation(newPos));
@@ -33,7 +32,7 @@ glm::vec3 Light::getPosition() const {
     if (!transform) return glm::vec3(0.0f);
 
     glm::mat4 matrix = transform->getMatrix();
-    // Pozice je v posledním sloupci matice
+    //translations are in third row
     return glm::vec3(matrix[3]);
 }
 

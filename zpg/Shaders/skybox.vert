@@ -11,10 +11,8 @@ void main()
 {
     TexCoords = vp;
     
-    // Vypočítáme pozici
     vec4 viewPos = view * vec4(vp, 1.0);
     vec4 clipPos = projection * viewPos;
     
-    // Nastavíme Z na maximum
     gl_Position = vec4(clipPos.x, clipPos.y, clipPos.w, clipPos.w);
 }

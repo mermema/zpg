@@ -18,8 +18,8 @@ struct Light {
     float constant;         
     float linear;           
     float quadratic;        
-    vec3 direction;         // Pro directional a reflector
-    float angle;            // Pro reflector - úhel ve stupních
+    vec3 direction;         
+    float angle;            
 };
 
 uniform Light lights[MAX_LIGHTS];
@@ -40,7 +40,6 @@ void main() {
     for (int i = 0; i < numberOfLights; i++) {
         vec3 lightResult = vec3(0.0);
         
-        // Ambient složka
         float ambientStrength = 0.05;
         vec3 ambient = lights[i].color * ambientStrength * lights[i].intensity;
 

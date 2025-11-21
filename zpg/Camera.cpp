@@ -17,14 +17,14 @@ Camera::Camera(float fov, float zNear, float zFar)
 }
 
 void Camera::recalculateTarget() {
-    double radPitch = glm::radians(this->pitch);
-    double radYaw = glm::radians(this->yaw);
-
+    float radPitch = glm::radians(this->pitch);
+    float radYaw = glm::radians(this->yaw);
+    //!!!! not setting target possition but target  direction vector
     target.x = std::cos(radPitch) * std::cos(radYaw);
     target.z = std::cos(radPitch) * std::sin(radYaw);
     target.y = std::sin(radPitch);
 
-    notifyObservers(); // Informuj pozorovatele
+    notifyObservers();
 }
 
 void Camera::calculateViewMatrix() {
@@ -67,16 +67,6 @@ void Camera::changePitch(float deg) {
 
     recalculateTarget();
 }
-/*
-
-glm::mat4 Camera::getViewMatrix() const {
-    return viewMatrix;
-}
-
-glm::vec3 Camera::getPosition() const {
-    return eye;
-}
-*/
 
 
 glm::vec3 Camera::getTarget() const {

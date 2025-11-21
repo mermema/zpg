@@ -18,8 +18,8 @@ struct Light {
     float constant;         
     float linear;           
     float quadratic;        
-    vec3 direction;         // Pro directional a reflector
-    float angle;            // Pro reflector - úhel ve stupních
+    vec3 direction;         //for directional and reflector
+    float angle;            //for ref
 };
 
 uniform Light lights[MAX_LIGHTS];
@@ -46,38 +46,38 @@ void main() {
 
 
 
-        if (lights[i].type == 0) { // AMBIENT
+        if (lights[i].type == 0) { //AMBIENT
             lightResult =  lights[i].color * lights[i].intensity;
 
         }
-        else if (lights[i].type == 1) { // POINT
+        else if (lights[i].type == 1) { //point
             vec3 lightPos = vec3(lights[i].lightMatrix[3]);
 
             float distance = length(lightPos - FragPos);
             float attenuation = calculateAttenuation(distance, lights[i].constant, lights[i].linear, lights[i].quadratic);
 
-            // Diffuse složka
+            //diffuse
             vec3 lightDir = normalize(lightPos - FragPos);
             float diff = max(dot(norm, lightDir), 0.0);
             vec3 diffuse = lights[i].color * diff * lights[i].intensity;
         
-            // Specular složka
+            //specular
             float specularStrength = 0.2;
             vec3 reflectDir = reflect(-lightDir, norm);
             float spec = pow(max(dot(viewDir, reflectDir), 0.0), 32.0);
             vec3 specular = lights[i].color * spec * specularStrength * lights[i].intensity;
         
-            // Aplikovat útlum
+            //attenuation
             diffuse = diffuse * attenuation;
             specular = specular * attenuation;
 
-            // Přidat k výsledku
+            //resultlight
             lightResult = ambient + diffuse + specular;
         }
 
 
 
-        else if (lights[i].type == 2) { // DIRECTIONAL
+        else if (lights[i].type == 2) { //directional
             vec3 lightDir = normalize(-lights[i].direction);
             
             float diff = max(dot(norm, lightDir), 0.0);
@@ -89,14 +89,14 @@ void main() {
             
             lightResult = ambient + diffuse + specular;
         }
-else if (lights[i].type == 3) { // REFLECTOR
+else if (lights[i].type == 3) { //reflector
     vec3 lightPos = vec3(lights[i].lightMatrix[3]);
     vec3 lightDir = normalize(lightPos - FragPos);
     
-    // Vzdálenost od světla k fragmentu
+
     float distance = length(FragPos - lightPos);
     
-    // PERSPEKTIVNÍ ÚPRAVA: úhel se rozšiřuje se vzdáleností
+    //make  come perspective
     float perspectiveAngle = lights[i].angle * (1.0 + distance * 0.05);
     float alpha = cos(radians(perspectiveAngle));
     
@@ -116,6 +116,7 @@ else if (lights[i].type == 3) { // REFLECTOR
         
         lightResult = ambient + (diffuse + specular) * coneAttenuation * distAttenuation;
     }
+    
     else {
         lightResult = ambient;
     }

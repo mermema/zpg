@@ -8,13 +8,12 @@ class ShaderProgram;
 
 class Camera : public Observable {
 private:
-    glm::vec3 eye;       //pozice kamery
-    glm::vec3 target;    //pozice toho na co se vivame
+    glm::vec3 eye;       //camera pos
+    glm::vec3 target;    //target vector
     glm::vec3 up;        //smer
 
-         //vertikalnirotace
-    float fov;           //zorný úhel
-    float zNear, zFar;   
+    float fov;           //field of wiew
+    float zNear, zFar;   //near and far target
 
     bool enabled = true;
 
@@ -23,21 +22,20 @@ private:
     float aspectRatio = 4.0f / 3.0f;
 
 public:
-    float yaw;           //horizintalnirotace
+    float yaw;           //horizontalization
     float pitch;
     Camera(float fov = 45.0f, float zNear = 0.1f, float zFar = 100.0f);
 
-    //Pohyb
+    //moving
     void forward(float rate);
     void backward(float rate);
     void toLeft(float rate);
     void toRight(float rate);
 
-    //Otoèení
     void changeYaw(float deg);
     void changePitch(float deg);
 
-    // Aktualizace smìru a pohledu
+    //recalculation
     void recalculateTarget();
     void calculateViewMatrix();
     void setAspectRatio(float newAspect);
@@ -45,11 +43,9 @@ public:
     glm::vec3 getTarget() const;
     bool getStatus() const;
 
-    // Aktivace/deaktivace
     void enable();
     void disable();
 
-    // Pøi notifikaci nejdøív pøepoèítá viewMatrix
     void notifyObservers() override;
 
     void setPosition(const glm::vec3& newPosition) {
