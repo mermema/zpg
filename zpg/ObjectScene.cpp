@@ -83,4 +83,5 @@ void ObjectScene::create()
 
         camera->notifyObservers();
 
+
 }

@@ -1,4 +1,6 @@
 ﻿#include "App.h"
+#include "BezierScene.h"
+#include "SkyBoxScene.h"
 void App::setCurrentScene(int index) {
     if (index >= 0 && index < scenes.size()) {
         currentScene = index;
@@ -51,31 +53,52 @@ void App::init() {
 
 
 void App::createScenes() {
-    SkyBoxScene * scene = new SkyBoxScene();
+    ShaderTestScene* scene = new ShaderTestScene();
     scene->create();
     this->scenes.push_back(scene);
 
+    ForrestScene* forrestScene = new ForrestScene();
+    forrestScene->create();
+    this->scenes.push_back(forrestScene);
 
-    SolarSystemScene* scene2 = new SolarSystemScene();
+
+    GameScene* scene2 = new GameScene();
     scene2->create();
     this->scenes.push_back(scene2);
 
 
-    BallScene* scene3 = new BallScene();
+    SolarSystemScene* scene3 = new SolarSystemScene();
     scene3->create();
     this->scenes.push_back(scene3);
 
-    ForrestScene* complexscene = new ForrestScene();
-    complexscene->create();
-    this->scenes.push_back(complexscene);
+    BezierScene* bezierScene = new BezierScene();
+    bezierScene->create();
+    this->scenes.push_back(bezierScene);
 
 
     ReflectorTestScene* sceneReflector = new ReflectorTestScene();
     sceneReflector->create();
     this->scenes.push_back(sceneReflector);
+    
+
+    BallScene* ballScene = new BallScene();
+    ballScene->create();
+    this->scenes.push_back(ballScene);
+
+    
+    SkyBoxScene* objectScene = new SkyBoxScene();
+    objectScene->create();
+    this->scenes.push_back(objectScene);
 
 
-    currentScene = 3;
+    ObjectPlaceScene* objectPlaceScene = new ObjectPlaceScene();
+    objectPlaceScene->create();
+    this->scenes.push_back(objectPlaceScene);
+
+
+
+
+    currentScene = 0;
 
 }
 

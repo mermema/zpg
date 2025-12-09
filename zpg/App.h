@@ -11,7 +11,9 @@
 #include "ObjectScene.h"
 #include "SolarSystemScene.h"
 #include "ReflectorTestScene.h"
-#include "SkyBoxScene.h"
+#include "ShaderTestScene.h"
+#include "GameScene.h"
+#include "ObjectPlaceScene.h"
 
 class App {
 public:

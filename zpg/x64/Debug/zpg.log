@@ -1,2 +1,20 @@
-﻿LINK : warning LNK4098: Výchozí knihovna MSVCRT je v konfliktu s použitím jiných knihoven. Použijte /NODEFAULTLIB:library.
-  zpg.vcxproj -> C:\Users\matej\Desktop\zpg\x64\Debug\zpg.exe
+﻿  SolarSystemScene.cpp
+C:\Users\matej\Desktop\zpg - kopie\zpg\ShaderLoader.h(5,10): warning C4067: Po direktivě preprocesoru byly neočekávané tokeny – očekával se nový řádek.
+  (kompilování zdrojového souboru SolarSystemScene.cpp)
+  
+C:\Users\matej\Desktop\zpg - kopie\zpg\SolarSystemScene.cpp(93,46): warning C4244: argument: genType se převádí na float; může dojít ke ztrátě dat.
+C:\Users\matej\Desktop\zpg - kopie\zpg\SolarSystemScene.cpp(93,46): warning C4244:         with
+C:\Users\matej\Desktop\zpg - kopie\zpg\SolarSystemScene.cpp(93,46): warning C4244:         [
+C:\Users\matej\Desktop\zpg - kopie\zpg\SolarSystemScene.cpp(93,46): warning C4244:             genType=double
+C:\Users\matej\Desktop\zpg - kopie\zpg\SolarSystemScene.cpp(93,46): warning C4244:         ]
+C:\Users\matej\Desktop\zpg - kopie\zpg\SolarSystemScene.cpp(94,46): warning C4244: argument: genType se převádí na float; může dojít ke ztrátě dat.
+C:\Users\matej\Desktop\zpg - kopie\zpg\SolarSystemScene.cpp(94,46): warning C4244:         with
+C:\Users\matej\Desktop\zpg - kopie\zpg\SolarSystemScene.cpp(94,46): warning C4244:         [
+C:\Users\matej\Desktop\zpg - kopie\zpg\SolarSystemScene.cpp(94,46): warning C4244:             genType=double
+C:\Users\matej\Desktop\zpg - kopie\zpg\SolarSystemScene.cpp(94,46): warning C4244:         ]
+C:\Users\matej\Desktop\zpg - kopie\zpg\SolarSystemScene.cpp(95,41): warning C4305: argument: zkrácení z: double na: T
+C:\Users\matej\Desktop\zpg - kopie\zpg\SolarSystemScene.cpp(95,41): warning C4305:         with
+C:\Users\matej\Desktop\zpg - kopie\zpg\SolarSystemScene.cpp(95,41): warning C4305:         [
+C:\Users\matej\Desktop\zpg - kopie\zpg\SolarSystemScene.cpp(95,41): warning C4305:             T=float
+C:\Users\matej\Desktop\zpg - kopie\zpg\SolarSystemScene.cpp(95,41): warning C4305:         ]
+  zpg.vcxproj -> C:\Users\matej\Desktop\zpg - kopie\x64\Debug\zpg.exe

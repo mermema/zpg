@@ -50,7 +50,7 @@ void main() {
         materialDiffuse = texture(material.diffuseMap, TexCoords).rgb;
     } else {
 
-            materialDiffuse = objectColor;
+            materialDiffuse = material.diffuse;
     
     }
     
@@ -72,8 +72,13 @@ void main() {
             float diff = max(dot(norm, lightDir), 0.0);
             vec3 diffuse = materialDiffuse * diff * lights[i].color * lights[i].intensity;
         
-            vec3 halfDir = normalize(lightDir + viewDir);
-            float spec = pow(max(dot(norm, halfDir), 0.0), material.shininess);            vec3 specular = material.specular * spec * lights[i].color * lights[i].intensity;
+            float spec = 0.0;
+            if (diff > 0.0) {
+                vec3 halfDir = normalize(lightDir + viewDir);
+                spec = pow(max(dot(norm, halfDir), 0.0), material.shininess);
+            }
+            vec3 specular = material.specular * spec * lights[i].color * lights[i].intensity;
+
         
             diffuse = diffuse * attenuation;
             specular = specular * attenuation;
@@ -86,8 +91,13 @@ void main() {
             float diff = max(dot(norm, lightDir), 0.0);
             vec3 diffuse = materialDiffuse * diff * lights[i].color * lights[i].intensity;
             
-            vec3 halfDir = normalize(lightDir + viewDir);
-            float spec = pow(max(dot(norm, halfDir), 0.0), material.shininess);            vec3 specular = material.specular * spec * lights[i].color * lights[i].intensity;
+            float spec = 0.0;
+            if (diff > 0.0) {
+                vec3 halfDir = normalize(lightDir + viewDir);
+                spec = pow(max(dot(norm, halfDir), 0.0), material.shininess);
+            }
+            vec3 specular = material.specular * spec * lights[i].color * lights[i].intensity;
+
             
             lightResult = ambient + diffuse + specular;
         }
@@ -96,7 +106,7 @@ void main() {
             vec3 lightDir = normalize(lightPos - FragPos);
             
             float distance = length(FragPos - lightPos);
-            float perspectiveAngle = lights[i].angle * (1.0 + distance * 0.05);
+            float perspectiveAngle = lights[i].angle; // * (1.0 + distance * 0.05);
             float alpha = cos(radians(perspectiveAngle));
             
             float spot = dot(normalize(-lights[i].direction), lightDir);
@@ -107,8 +117,11 @@ void main() {
                 float diff = max(dot(norm, lightDir), 0.0);
                 vec3 diffuse = materialDiffuse * diff * lights[i].color * lights[i].intensity;
                 
-                vec3 halfDir = normalize(lightDir + viewDir);
-                float spec = pow(max(dot(norm, halfDir), 0.0), material.shininess);
+                float spec = 0.0;
+                if (diff > 0.0) {
+                    vec3 halfDir = normalize(lightDir + viewDir);
+                    spec = pow(max(dot(norm, halfDir), 0.0), material.shininess);
+                }
                 vec3 specular = material.specular * spec * lights[i].color * lights[i].intensity;
                 
                 float distAttenuation = calculateAttenuation(distance, lights[i].constant, lights[i].linear, lights[i].quadratic);

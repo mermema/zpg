@@ -4,6 +4,9 @@
 
 void ForrestScene::create()
 {
+
+    srand(1);
+
     const float plainUV[] = {
         //vrchol, normála, uv souøadnice
         1.0f, 0.0f, 1.0f,   0.0f, 1.0f, 0.0f,   0.0f, 0.0f,
@@ -14,31 +17,31 @@ void ForrestScene::create()
         1.0f, 0.0f, 1.0f,   0.0f, 1.0f, 0.0f,   0.0f, 0.0f,
        -1.0f, 0.0f,-1.0f,   0.0f, 1.0f, 0.0f,   10.0f, 10.0f
     };
-    this->enableMouseActions();
+    //this->enableMouseActions();
 
-    static Model modeltree;
-    static Model medelbush;
-    static Model sph1;
+    Model * modeltree = new Model;
+    Model * medelbush = new Model;
+    Model * sph1 = new Model;
     size_t vertexCount = sizeof(sphere) / (6 * sizeof(float));
-    sph1.upload(sphere, vertexCount);
+    sph1->upload(sphere, vertexCount);
 
 
-    static ShaderLoader vert("../zpg/Shaders/uni.vert", GL_VERTEX_SHADER);
-    static ShaderLoader frag("../zpg/Shaders/phongmulti.frag", GL_FRAGMENT_SHADER);
-    static ShaderLoader fragConstant("../zpg/Shaders/coloruni/constant.frag", GL_FRAGMENT_SHADER);
+    ShaderLoader* vert = new ShaderLoader("../zpg/Shaders/uni.vert", GL_VERTEX_SHADER);
+    ShaderLoader* frag = new ShaderLoader("../zpg/Shaders/coloruni/phongmulti.frag", GL_FRAGMENT_SHADER);
+    ShaderLoader* fragConstant = new ShaderLoader("../zpg/Shaders/coloruni/constant.frag", GL_FRAGMENT_SHADER);
 
-    static ShaderLoader textureVert("../zpg/Shaders/uv.vert", GL_VERTEX_SHADER);
-    static ShaderLoader textureFrag("../zpg/Shaders/phongmultexture.frag", GL_FRAGMENT_SHADER);
-    std::vector<Shader*> shaders = { &textureVert, &textureFrag };
-    static ShaderProgram textureshader(shaders);
+    ShaderLoader* textureVert = new ShaderLoader("../zpg/Shaders/uv.vert", GL_VERTEX_SHADER);
+    ShaderLoader* textureFrag = new ShaderLoader("../zpg/Shaders/phongmultexture.frag", GL_FRAGMENT_SHADER);
 
+    std::vector<Shader*> shaders = { textureVert, textureFrag };
+    ShaderProgram* textureshader = new ShaderProgram(shaders);
 
-    shaders = { &vert, &frag };
+    shaders = { vert, frag };
+    ShaderProgram* shaderProgram = new ShaderProgram(shaders);
 
-    static ShaderProgram shaderProgram(shaders);
+    shaders = { vert, fragConstant };
+    ShaderProgram* fireflyshader = new ShaderProgram(shaders);
 
-    shaders = { &vert, &fragConstant };
-    static ShaderProgram fireflyshader(shaders);
 
 
     Camera* camera = new Camera(60.0f, 0.1f, 100.0f);
@@ -46,12 +49,15 @@ void ForrestScene::create()
     camera->setTarget(glm::vec3(0.0f));
     this->setCamera(camera);
 
-    auto* mainLight = new DirectionalLight(glm::vec3(1, -1, 1), glm::vec3(1.0f, 0.9f, 0.7f), 0.1f);
+    auto* mainLight = new DirectionalLight(glm::vec3(1, -1, 1), glm::vec3(1.0f, 0.9f, 0.7f), 0.3f);
 
     this->addLight(mainLight);
 
 
     auto* flashlight = new Flashlight(camera);
+    flashlight->setAttenuation(1, 0.1, 0.1);
+    flashlight->setAngle(20);
+    flashlight->setColor(glm::vec3(1));
     this->addLight(flashlight);
 
     std::vector<Light*> allLights;
@@ -74,7 +80,7 @@ void ForrestScene::create()
         t->add(new RandomTranslation(2.0f));
 
 
-        Firefly* firefly = new Firefly(&sph1, &fireflyshader, fireflyLight, t, glm::vec3(1, 1, 1));
+        Firefly* firefly = new Firefly(sph1, fireflyshader, fireflyLight, t, glm::vec3(1, 1, 1));
         firefly->addToScene(this);
         allLights.push_back(fireflyLight);
    
@@ -97,7 +103,7 @@ void ForrestScene::create()
     planeModel->uploadWithUV(plainUV, vertexCount);
     CompositeTransformation* planeScale = new CompositeTransformation();
     planeScale->add(new Scale(glm::vec3(30, 1, 30)));
-    DrawableObject* planeobject = new DrawableObject(planeModel, &textureshader, grassTexture);
+    DrawableObject* planeobject = new DrawableObject(planeModel, textureshader, grassTexture);
     planeobject->setTransformation(planeScale);
     this->addObject(planeobject);
 
@@ -105,7 +111,7 @@ void ForrestScene::create()
 
 
     vertexCount = sizeof(tree) / (6 * sizeof(float));
-    modeltree.upload(tree, vertexCount);
+    modeltree->upload(tree, vertexCount);
 
     int gridSize = 9;
     float spacing = 5.0f;
@@ -113,7 +119,7 @@ void ForrestScene::create()
 
     for (int row = 0; row < gridSize; row++) {
         for (int col = 0; col < gridSize; col++) {
-            DrawableObject* bushObj = new DrawableObject(&modeltree, &shaderProgram);
+            DrawableObject* bushObj = new DrawableObject(modeltree, shaderProgram);
             CompositeTransformation* t = new CompositeTransformation();
             t->add(new Scale(glm::vec3(0.5f)));
 
@@ -125,17 +131,25 @@ void ForrestScene::create()
 
             t->add(new Translation(glm::vec3(baseX + randomOffsetX, 0, baseZ + randomOffsetZ)));
             bushObj->setTransformation(t);
+
+            float r = 0.0f + (rand() / (float)RAND_MAX) * 0.4f;
+            float g = 0.3f + (rand() / (float)RAND_MAX) * 0.7f;
+            float b = 0.0f + (rand() / (float)RAND_MAX) * 0.4f;
+
+            bushObj->setObjectColor(glm::vec3(r, g, b));
+
+
             this->addObject(bushObj);
         }
     }
 
 
     vertexCount = sizeof(bushes) / (6 * sizeof(float));
-    medelbush.upload(bushes, vertexCount);
+    medelbush->upload(bushes, vertexCount);
 
     for (int row = 0; row < gridSize; row++) {
         for (int col = 0; col < gridSize; col++) {
-            DrawableObject* bushObj = new DrawableObject(&medelbush, &shaderProgram);
+            DrawableObject* bushObj = new DrawableObject(medelbush, shaderProgram);
             CompositeTransformation* t = new CompositeTransformation();
             t->add(new Scale(glm::vec3(2.0f)));
 
@@ -147,6 +161,13 @@ void ForrestScene::create()
 
             t->add(new Translation(glm::vec3(baseX + randomOffsetX, 0, baseZ + randomOffsetZ)));
             bushObj->setTransformation(t);
+
+            float r = 0.0f + (rand() / (float)RAND_MAX) * 0.4f;
+            float g = 0.3f + (rand() / (float)RAND_MAX) * 0.7f;
+            float b = 0.0f + (rand() / (float)RAND_MAX) * 0.4f;
+
+            bushObj->setObjectColor(glm::vec3(r, g, b));
+
             this->addObject(bushObj);
         }
     }
@@ -155,32 +176,32 @@ void ForrestScene::create()
     Texture* shrekTexture = new Texture(defaultMaterial, "../zpg/Objects/shrek.png");
 
 
-    static ObjModel shrek("../zpg/Objects/shrek.obj");
-    DrawableObject* shrekObject = new DrawableObject(&shrek, &textureshader, shrekTexture);
+    ObjModel * shrek = new ObjModel("../zpg/Objects/shrek.obj");
+    DrawableObject* shrekObject = new DrawableObject(shrek, textureshader, shrekTexture);
     shrekObject->setObjectColor(glm::vec3(0, 1, 0));
     this->addObject(shrekObject);
 
     Texture* fionaTexture = new Texture(defaultMaterial, "../zpg/Objects/fiona.png");
 
 
-    static ObjModel fiona("../zpg/Objects/fiona.obj");
-    DrawableObject* fionaObject = new DrawableObject(&fiona, &textureshader, fionaTexture);
+    ObjModel * fiona = new ObjModel("../zpg/Objects/fiona.obj");
+    DrawableObject* fionaObject = new DrawableObject(fiona, textureshader, fionaTexture);
     CompositeTransformation* fionaTrans = new CompositeTransformation();
     fionaTrans->add(new Translation(glm::vec3(2, 0, 0)));
     fionaObject->setTransformation(fionaTrans);
     this->addObject(fionaObject);
 
     Texture* toiletTexture = new Texture(defaultMaterial, "../zpg/Objects/toiled.jpg");
-    static ObjModel toilet("../zpg/Objects/toiled.obj");
-    DrawableObject* toiletObject = new DrawableObject(&toilet, &textureshader, toiletTexture);
+    ObjModel * toilet = new ObjModel("../zpg/Objects/toiled.obj");
+    DrawableObject* toiletObject = new DrawableObject(toilet, textureshader, toiletTexture);
     CompositeTransformation* toiletTrans = new CompositeTransformation();
     toiletTrans->add(new Translation(glm::vec3(0, 0, -3)));
     toiletObject->setTransformation(toiletTrans);
     this->addObject(toiletObject);
 
     Texture* catTexture = new Texture(defaultMaterial, "../zpg/Objects/cat.jpg");
-    static ObjModel cat("../zpg/Objects/cat.obj");
-    DrawableObject* catObject = new DrawableObject(&cat, &textureshader, catTexture);
+    ObjModel* cat = new ObjModel("../zpg/Objects/cat.obj");
+    DrawableObject* catObject = new DrawableObject(cat, textureshader, catTexture);
     CompositeTransformation* catTrans = new CompositeTransformation();
     catTrans->add(new Rotation(-3.1415926 / 2, glm::vec3(1, 0, 0)));
     catTrans->add(new Scale(glm::vec3(0.03)));

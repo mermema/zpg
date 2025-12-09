@@ -11,6 +11,7 @@ public:
 
     void add(BasicTransformation* t);
     void insert(BasicTransformation* t);
+    void remove(BasicTransformation* t);
     glm::mat4 getMatrix() const;
 
 

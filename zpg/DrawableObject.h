@@ -7,7 +7,7 @@
 
 class DrawableObject {
 public:
-    DrawableObject(Model* model, ShaderProgram* shader, Texture* texture = nullptr);
+    DrawableObject(Model* model, ShaderProgram* shader, Texture* texture = nullptr, bool autostencil = true);
 
     void setTransformation(CompositeTransformation* t);
     CompositeTransformation* getTransformation() const;
@@ -19,6 +19,7 @@ public:
     unsigned int getID() const { return objectID; }
     void setNotMovable() { notMovable = true; }
     bool getNotMovable() { return notMovable; }
+    void setStencilID(unsigned int id) { objectID = id;}
 
 
 private:

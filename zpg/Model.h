@@ -12,7 +12,7 @@ public:
     ~Model();
 
     void uploadWithUV(const float* data, size_t vertexCount);
-    void upload(const vector<glm::vec3>& vertices);
+    virtual void upload(const vector<glm::vec3>& vertices);
     void upload(const float* data, size_t vertexCount_);
     void draw();
 };

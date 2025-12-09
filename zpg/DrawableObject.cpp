@@ -6,8 +6,17 @@ int DrawableObject::nextID = 1;
 
 
 
-DrawableObject::DrawableObject(Model* model, ShaderProgram* shader, Texture* texturearg)
-    : model(model), shader(shader), transform(nullptr), texture(texturearg), objectID(nextID++) {
+DrawableObject::DrawableObject(Model* model, ShaderProgram* shader, Texture* texturearg, bool autoStencil)
+    : model(model), shader(shader), transform(nullptr), texture(texturearg){
+
+    if (autoStencil)
+    {
+        objectID = nextID++;
+    }
+    else
+    {
+        objectID = 0;
+    }
 }
 
 void DrawableObject::setTransformation(CompositeTransformation* t) {

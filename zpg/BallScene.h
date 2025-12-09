@@ -4,13 +4,13 @@
 #include "Translation.h"
 #include "Models/sphere.h"
 #include "ShaderLoader.h"
+#include "ObjModel.h"
 class BallScene :
     public Scene
 {
 public:
     void create();
 private:
-    Model sph1;
 
 
 };

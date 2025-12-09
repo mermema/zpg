@@ -15,6 +15,19 @@ void CompositeTransformation::insert(BasicTransformation* t) {
     transformations.insert(transformations.begin(), t); 
 }
 
+void CompositeTransformation::remove(BasicTransformation* t)
+{
+    for (size_t i = 0; i < transformations.size(); i++)
+    {
+        if (transformations[i] == t)
+        {
+            transformations.erase(transformations.begin() + i);
+            return;
+        }
+    }
+}
+
+
 glm::mat4 CompositeTransformation::getMatrix() const {
     glm::mat4 result(1.0f);
     for (auto t : transformations)

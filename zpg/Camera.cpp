@@ -94,7 +94,7 @@ void Camera::applyToShader(ShaderProgram* shader) {
 
 void Camera::notifyObservers() {
     calculateViewMatrix();
-    std::cout << "Camera notifying " << observers.size() << " observers" << std::endl;
+    //std::cout << "Camera notifying " << observers.size() << " observers" << std::endl;
     for (Observer* observer : observers) {
         observer->update(this);
     }

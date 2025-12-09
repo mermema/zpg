@@ -1,43 +1,53 @@
-C:\Users\matej\Desktop\zpg\zpg\AmbientLight.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\AmbientLight.obj
-C:\Users\matej\Desktop\zpg\zpg\App.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\App.obj
-C:\Users\matej\Desktop\zpg\zpg\BallScene.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\BallScene.obj
-C:\Users\matej\Desktop\zpg\zpg\BasicTransformation.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\BasicTransformation.obj
-C:\Users\matej\Desktop\zpg\zpg\CallbackHandler.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\CallbackHandler.obj
-C:\Users\matej\Desktop\zpg\zpg\Camera.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\Camera.obj
-C:\Users\matej\Desktop\zpg\zpg\DirectionaLight.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\DirectionaLight.obj
-C:\Users\matej\Desktop\zpg\zpg\DrawableObject.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\DrawableObject.obj
-C:\Users\matej\Desktop\zpg\zpg\DynamicRotation.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\DynamicRotation.obj
-C:\Users\matej\Desktop\zpg\zpg\DynamicTransformation.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\DynamicTransformation.obj
-C:\Users\matej\Desktop\zpg\zpg\Firefly.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\Firefly.obj
-C:\Users\matej\Desktop\zpg\zpg\FlashLight.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\FlashLight.obj
-C:\Users\matej\Desktop\zpg\zpg\ForrestScene.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\ForrestScene.obj
-C:\Users\matej\Desktop\zpg\zpg\Light.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\Light.obj
-C:\Users\matej\Desktop\zpg\zpg\main.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\main.obj
-C:\Users\matej\Desktop\zpg\zpg\Material.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\Material.obj
-C:\Users\matej\Desktop\zpg\zpg\MatrixTransformation.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\MatrixTransformation.obj
-C:\Users\matej\Desktop\zpg\zpg\Model.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\Model.obj
-C:\Users\matej\Desktop\zpg\zpg\ObjectScene.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\ObjectScene.obj
-C:\Users\matej\Desktop\zpg\zpg\ObjModel.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\ObjModel.obj
-C:\Users\matej\Desktop\zpg\zpg\Observable.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\Observable.obj
-C:\Users\matej\Desktop\zpg\zpg\Observer.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\Observer.obj
-C:\Users\matej\Desktop\zpg\zpg\plain.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\plain.obj
-C:\Users\matej\Desktop\zpg\zpg\PointLight.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\PointLight.obj
-C:\Users\matej\Desktop\zpg\zpg\RandomTranslation.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\RandomTranslation.obj
-C:\Users\matej\Desktop\zpg\zpg\ReflectorLight.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\ReflectorLight.obj
-C:\Users\matej\Desktop\zpg\zpg\ReflectorTestScene.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\ReflectorTestScene.obj
-C:\Users\matej\Desktop\zpg\zpg\Rotation.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\Rotation.obj
-C:\Users\matej\Desktop\zpg\zpg\Scale.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\Scale.obj
-C:\Users\matej\Desktop\zpg\zpg\Scene.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\Scene.obj
-C:\Users\matej\Desktop\zpg\zpg\Shader.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\Shader.obj
-C:\Users\matej\Desktop\zpg\zpg\ShaderLoader.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\ShaderLoader.obj
-C:\Users\matej\Desktop\zpg\zpg\ShaderProgram.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\ShaderProgram.obj
-C:\Users\matej\Desktop\zpg\zpg\ShapeBuilder.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\ShapeBuilder.obj
-C:\Users\matej\Desktop\zpg\zpg\CompositeTransformation.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\CompositeTransformation.obj
-C:\Users\matej\Desktop\zpg\zpg\SkyBox.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\SkyBox.obj
-C:\Users\matej\Desktop\zpg\zpg\SkyBoxScene.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\SkyBoxScene.obj
-C:\Users\matej\Desktop\zpg\zpg\SkyDome.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\SkyDome.obj
-C:\Users\matej\Desktop\zpg\zpg\SkyObject.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\SkyObject.obj
-C:\Users\matej\Desktop\zpg\zpg\SolarSystemScene.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\SolarSystemScene.obj
-C:\Users\matej\Desktop\zpg\zpg\sphere.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\sphere.obj
-C:\Users\matej\Desktop\zpg\zpg\Texture.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\Texture.obj
-C:\Users\matej\Desktop\zpg\zpg\Translation.cpp;C:\Users\matej\Desktop\zpg\zpg\x64\Debug\Translation.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\AmbientLight.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\AmbientLight.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\App.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\App.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\BallScene.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\BallScene.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\BasicTransformation.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\BasicTransformation.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\BezierScene.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\BezierScene.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\CallbackHandler.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\CallbackHandler.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\Camera.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\Camera.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\DirectionaLight.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\DirectionaLight.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\DrawableObject.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\DrawableObject.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\DynamicBezierCurve.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\DynamicBezierCurve.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\DynamicBezierSpline.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\DynamicBezierSpline.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\DynamicBezierSplineCS.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\DynamicBezierSplineCS.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\DynamicRotation.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\DynamicRotation.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\DynamicTransformation.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\DynamicTransformation.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\DynamicTranslation.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\DynamicTranslation.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\DynamicTranslationTwoSegment.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\DynamicTranslationTwoSegment.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\Firefly.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\Firefly.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\FlashLight.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\FlashLight.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\ForrestScene.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\ForrestScene.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\Light.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\Light.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\main.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\main.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\Material.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\Material.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\MatrixTransformation.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\MatrixTransformation.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\Model.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\Model.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\ObjectPlaceScene.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\ObjectPlaceScene.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\ObjectScene.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\ObjectScene.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\ObjModel.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\ObjModel.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\Observable.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\Observable.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\Observer.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\Observer.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\plain.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\plain.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\PointLight.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\PointLight.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\RandomTranslation.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\RandomTranslation.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\ReflectorLight.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\ReflectorLight.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\ReflectorTestScene.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\ReflectorTestScene.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\Rotation.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\Rotation.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\Scale.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\Scale.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\Scene.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\Scene.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\Shader.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\Shader.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\ShaderLoader.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\ShaderLoader.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\ShaderProgram.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\ShaderProgram.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\ShaderTestScene.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\ShaderTestScene.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\ShapeBuilder.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\ShapeBuilder.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\CompositeTransformation.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\CompositeTransformation.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\SkyBox.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\SkyBox.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\GameScene.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\GameScene.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\SkyBoxScene.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\SkyBoxScene.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\SkyBoyScene.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\SkyBoyScene.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\SkyDome.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\SkyDome.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\SkyObject.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\SkyObject.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\SolarSystemScene.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\SolarSystemScene.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\sphere.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\sphere.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\Texture.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\Texture.obj
+C:\Users\matej\Desktop\zpg - kopie\zpg\Translation.cpp;C:\Users\matej\Desktop\zpg - kopie\zpg\x64\Debug\Translation.obj

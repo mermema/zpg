@@ -41,6 +41,17 @@ void CallbackHandler::key(GLFWwindow* window, int key, int scancode, int action,
         if (key >= 321 && key <= 326) {
             int index = key - 321;
             app->setCurrentScene(index);
+            int width, height;
+            glfwGetFramebufferSize(window, &width, &height);
+            CallbackHandler::framebufferSize(window, width, height);
+        }
+
+        if (key >= 49 && key <= 57) {
+            int index = key - 49;
+            app->setCurrentScene(index);
+            int width, height;
+            glfwGetFramebufferSize(window, &width, &height);
+            CallbackHandler::framebufferSize(window, width, height);
         }
     }
 
@@ -53,6 +64,8 @@ void CallbackHandler::key(GLFWwindow* window, int key, int scancode, int action,
         if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) camera->backward(speed);
         if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) camera->toLeft(speed);
         if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) camera->toRight(speed);
+        if (glfwGetKey(window, GLFW_KEY_P) == GLFW_PRESS) scene->handlePKey();
+
     }
 }
 

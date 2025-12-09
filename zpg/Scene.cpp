@@ -1,6 +1,7 @@
 #include "Scene.h"
 #include <GLFW/glfw3.h>
 #include <unordered_set>
+#include "ObjModel.h"
 
 Scene::Scene() {}
 
@@ -208,7 +209,7 @@ void Scene::removeObjectByID( int id) {
             }
             delete objects[i]; 
             objects.erase(objects.begin() + i); //earsing from scenes in this objects
-            std::cout<<"removed object with id:" << id << endl;
+            //std::cout<<"removed object with id:" << id << endl;
             return;
         }
     }
@@ -256,7 +257,17 @@ DrawableObject* Scene::clickCreateObject() {
     {
         return nullptr;
     }
-    DrawableObject* newObj = new DrawableObject(clickCreateModel, clickCreateShader);
+
+    DrawableObject* newObj = nullptr;
+
+    if (dynamic_cast<ObjModel*>(clickCreateModel) && clickCreateTexture != nullptr)
+    {
+        newObj = new DrawableObject(clickCreateModel, clickCreateShader, clickCreateTexture);
+    }
+    else
+    {
+        newObj = new DrawableObject(clickCreateModel, clickCreateShader);
+    }
     newObj->setObjectColor(glm::vec3(1,1,0));
 
     return newObj;
